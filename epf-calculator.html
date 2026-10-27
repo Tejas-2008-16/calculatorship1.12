@@ -54,26 +54,90 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="site-logo" aria-label="Calculatorship Home">
-        <img src="logo-light.svg" alt="Calculatorship Logo" width="160" height="38">
+      <a href="/" class="brand" aria-label="Calculatorship Homepage">
+        <img src="/logo-light.svg" alt="Calculatorship — Free Financial Calculators for Indian Investors" width="220" height="38" loading="lazy">
       </a>
-      <nav class="site-nav" aria-label="Main Navigation">
-        <a href="/calculators.html" class="active">Calculators</a>
-        <a href="/blog.html">Guides</a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="/calculators.html" class="nav-dropdown-toggle">Calculators</a>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-dropdown-grid">
+              <div class="nav-dropdown-group">
+                <div class="nav-dropdown-group-title">Investing</div>
+                <ul class="nav-dropdown-group-list">
+                  <li><a href="/">SIP Calculator</a></li>
+                  <li><a href="/lumpsum.html">Lumpsum</a></li>
+                  <li><a href="/step-up.html">Step-Up SIP</a></li>
+                  <li><a href="/cagr-calculator.html">CAGR Calculator</a></li>
+                  <li><a href="/compound-interest-calculator.html">Compound Interest</a></li>
+                  <li><a href="/simple-interest-calculator.html">Simple Interest</a></li>
+                </ul>
+              </div>
+              <div class="nav-dropdown-group">
+                <div class="nav-dropdown-group-title">Retirement &amp; Banking</div>
+                <ul class="nav-dropdown-group-list">
+                  <li><a href="/ppf-calculator.html">PPF Calculator</a></li>
+                  <li><a href="/epf-calculator.html">EPF Calculator</a></li>
+                  <li><a href="/nps-calculator.html">NPS Calculator</a></li>
+                  <li><a href="/swp-calculator.html">SWP Calculator</a></li>
+                  <li><a href="/fd-calculator.html">FD Calculator</a></li>
+                  <li><a href="/rd-calculator.html">RD Calculator</a></li>
+                </ul>
+              </div>
+              <div class="nav-dropdown-group">
+                <div class="nav-dropdown-group-title">Tax, Salary &amp; Loans</div>
+                <ul class="nav-dropdown-group-list">
+                  <li><a href="/income-tax-calculator.html">Income Tax (FY 26-27)</a></li>
+                  <li><a href="/in-hand-salary-calculator.html">In-Hand Salary</a></li>
+                  <li><a href="/hra-calculator.html">HRA Exemption</a></li>
+                  <li><a href="/gratuity-calculator.html">Gratuity (15/26)</a></li>
+                  <li><a href="/gst-calculator.html">GST Calculator</a></li>
+                  <li><a href="/emi-calculator.html">Loan EMI &amp; Prepay</a></li>
+                  <li><a href="/budget-planner.html">50/30/20 Budget</a></li>
+                  <li><a href="/inflation-calculator.html">Inflation Planner</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-dropdown-footer">
+              <a href="/calculators.html">Browse All 21 Calculators Directory &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <a href="/blog.html">Blog &amp; Guides</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
       </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="breadcrumb-bar">
-    <nav aria-label="Breadcrumbs" class="breadcrumb">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/calculators.html">Calculators</a></li>
-        <li aria-current="page">EPF Calculator</li>
-      </ol>
-    </nav>
+  <div class="calc-switcher-wrapper" style="margin-bottom: 24px;">
+    <div class="calc-switcher-bar">
+      <a class="calc-tab" href="/">SIP Calculator</a>
+      <a class="calc-tab" href="/lumpsum.html">Lumpsum</a>
+      <a class="calc-tab" href="/step-up.html">Step-Up SIP</a>
+      <a class="calc-tab" href="/cagr-calculator.html">CAGR</a>
+      <a class="calc-tab" href="/compound-interest-calculator.html">Compound Interest</a>
+      <a class="calc-tab" href="/simple-interest-calculator.html">Simple Interest</a>
+      <a class="calc-tab" href="/ppf-calculator.html">PPF</a>
+      <a class="calc-tab active" href="/epf-calculator.html">EPF</a>
+      <a class="calc-tab" href="/nps-calculator.html">NPS</a>
+      <a class="calc-tab" href="/swp-calculator.html">SWP</a>
+      <a class="calc-tab" href="/fd-calculator.html">FD</a>
+      <a class="calc-tab" href="/rd-calculator.html">RD</a>
+      <a class="calc-tab" href="/income-tax-calculator.html">Income Tax</a>
+      <a class="calc-tab" href="/in-hand-salary-calculator.html">In-Hand Salary</a>
+      <a class="calc-tab" href="/hra-calculator.html">HRA Exemption</a>
+      <a class="calc-tab" href="/gratuity-calculator.html">Gratuity</a>
+      <a class="calc-tab" href="/gst-calculator.html">GST</a>
+      <a class="calc-tab" href="/emi-calculator.html">Loan EMI</a>
+      <a class="calc-tab" href="/budget-planner.html">50/30/20 Budget</a>
+      <a class="calc-tab" href="/inflation-calculator.html">Inflation</a>
+    </div>
   </div>
 
   <main id="main-content" style="max-width: 1040px; margin: 2rem auto; padding: 0 1.25rem;">
@@ -91,140 +155,354 @@
       </p>
     </div>
 
-    <!-- Calculator Panel -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem; background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 2rem;">
-      <div>
-        <h2 style="font-size: 1.3rem; color: var(--text-primary); margin-top: 0; margin-bottom: 1.5rem;">Salary & Service Details</h2>
-        
-        <div style="margin-bottom: 1.25rem;">
-          <label for="epf-basic" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Monthly Basic Pay + DA (₹)</label>
-          <input type="number" id="epf-basic" value="30000" min="1500" max="1000000" step="1000" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-          <small style="color: var(--text-muted); font-size: 0.82rem;">12% employee share and 3.67% employer share are computed on this wage.</small>
-        </div>
+    <!-- Interactive Calculator Panel matching SIP Design -->
+    <div class="calc-main-container">
+      <div class="calc-grid" id="calculator-card">
+        <!-- Left: Inputs with Synchronized Sliders -->
+        <div class="calc-card">
+          <h2 style="font-size:1.35rem; font-weight:800; margin-bottom:24px; color:var(--text-primary);">Salary &amp; Contribution Details</h2>
 
-        <div style="margin-bottom: 1.25rem;">
-          <label for="epf-age" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Your Current Age (Years)</label>
-          <input type="number" id="epf-age" value="28" min="18" max="57" step="1" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-        </div>
-
-        <div style="margin-bottom: 1.25rem;">
-          <label for="epf-hike" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Annual Salary Increment (%)</label>
-          <input type="number" id="epf-hike" value="5.0" min="0" max="25" step="0.5" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-        </div>
-
-        <div style="margin-bottom: 1.5rem;">
-          <label for="epf-rate" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">EPFO Declared Rate (% p.a.)</label>
-          <input type="number" id="epf-rate" value="8.25" min="6" max="12" step="0.05" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-          <small style="color: var(--text-muted); font-size: 0.82rem;">Current official rate declared for FY 2026-27 is 8.25%.</small>
-        </div>
-
-        <button type="button" id="btn-calc-epf" style="width: 100%; padding: 0.85rem; background: var(--emerald); color: #fff; border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer;">Calculate EPF Balance</button>
-      </div>
-
-      <!-- Result Card -->
-      <div style="background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Estimated EPF Balance at Age 58</span>
-          <div id="result-epf-corpus" style="font-size: 2.3rem; font-weight: 800; color: var(--emerald); margin: 0.5rem 0 1rem;">₹84,52,190</div>
-
-          <hr style="border: 0; border-top: 1px solid var(--border-soft); margin: 1.25rem 0;">
-
-          <div style="font-size: 0.95rem; line-height: 2;">
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Employee Share (12%):</span>
-              <strong id="result-epf-employee">₹28,68,914</strong>
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="epf-basic-num">Monthly Basic Pay + DA</label>
+              <div class="calc-input-box">
+                <span class="calc-input-prefix">₹</span>
+                <input aria-label="Monthly Basic Input" id="epf-basic-num" max="500000" min="5000" step="1000" type="number" value="30000"/>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Employer Share (3.67%):</span>
-              <strong id="result-epf-employer">₹8,77,288</strong>
+            <input aria-label="Monthly Basic Slider" id="epf-basic" max="250000" min="5000" step="1000" type="range" value="30000"/>
+            <small style="color: var(--text-muted); font-size: 0.82rem; margin-top: 4px; display: block;">12% employee share and 3.67% employer EPF share are computed on this basic wage.</small>
+          </div>
+
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="epf-age-num">Your Current Age (Years)</label>
+              <div class="calc-input-box">
+                <input aria-label="Current Age Input" id="epf-age-num" max="57" min="18" step="1" type="number" value="28"/>
+                <span class="calc-input-suffix">Yrs</span>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Total Statutory Interest:</span>
-              <strong id="result-epf-interest" style="color: var(--emerald);">₹47,05,988</strong>
+            <input aria-label="Current Age Slider" id="epf-age" max="57" min="18" step="1" type="range" value="28"/>
+            <small style="color: var(--text-muted); font-size: 0.82rem; margin-top: 4px; display: block;">EPF compounds until standard retirement at age 58.</small>
+          </div>
+
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="epf-hike-num">Annual Salary Hike Expected</label>
+              <div class="calc-input-box">
+                <input aria-label="Salary Increment Input" id="epf-hike-num" max="20" min="0" step="0.5" type="number" value="5.0"/>
+                <span class="calc-input-suffix">%</span>
+              </div>
             </div>
+            <input aria-label="Salary Increment Slider" id="epf-hike" max="20" min="0" step="0.5" type="range" value="5.0"/>
+          </div>
+
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="epf-rate-num">EPFO Interest Rate</label>
+              <div class="calc-input-box">
+                <input aria-label="EPFO Interest Rate Input" id="epf-rate-num" max="10" min="6" step="0.05" type="number" value="8.25"/>
+                <span class="calc-input-suffix">%</span>
+              </div>
+            </div>
+            <input aria-label="EPFO Interest Rate Slider" id="epf-rate" max="10" min="6" step="0.05" type="range" value="8.25"/>
+            <small style="color: var(--text-muted); font-size: 0.82rem; margin-top: 4px; display: block;">Current EPFO declared rate for FY 2026-27 is 8.25% p.a.</small>
           </div>
         </div>
 
-        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-soft); font-size: 0.82rem; color: var(--text-muted);">
-          EPF maturity after 5 years of continuous service is 100% tax-free under Section 10(11).
+        <!-- Right: Summary Results & Visuals -->
+        <div class="calc-summary-card">
+          <div>
+            <h3 style="font-size:1.2rem; font-weight:800; color:var(--text-primary); margin-bottom:18px;">Retirement Corpus at Age 58</h3>
+            <div class="result-row">
+              <span class="result-label">Employee Total Contribution (12%)</span>
+              <span class="result-val" id="res-epf-employee">₹28,68,914</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Employer Total Contribution (3.67%)</span>
+              <span class="result-val" id="res-epf-employer">₹8,77,288</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Compounded Statutory Interest</span>
+              <span class="result-val" id="res-epf-interest" style="color:#059669;">₹47,05,988</span>
+            </div>
+            <div class="result-row" style="padding-top:18px;">
+              <span class="result-label" style="font-weight:800; color:var(--text-primary);">Total Accumulated EPF Balance</span>
+              <span class="result-val highlight" id="res-epf-corpus">₹84,52,190</span>
+            </div>
+
+            <!-- SVG Visual Donut Ratio -->
+            <div style="margin:28px 0 12px; display:flex; align-items:center; justify-content:center; gap:28px;">
+              <svg aria-label="EPF Contribution vs Interest Ratio" class="donut" height="130" viewbox="0 0 42 42" width="130">
+                <circle class="donut-ring" cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#E2E8F0" stroke-width="5.5"></circle>
+                <circle cx="21" cy="21" fill="transparent" id="epf-donut-segment" r="15.91549430918954" stroke="#00D09C" stroke-dasharray="55.7 44.3" stroke-dashoffset="25" stroke-width="5.5"></circle>
+              </svg>
+              <div style="font-size:0.90rem; line-height:1.9;">
+                <div style="display:flex; align-items:center; gap:8px;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#00D09C;"></span> <span id="epf-donut-leg-interest">Interest: 55.7%</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#CBD5E1;"></span> <span id="epf-donut-leg-contrib">Contributions: 44.3%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="calc-result-disclaimer">
+            Full EPF lump-sum withdrawal upon superannuation at age 58 is completely tax-free under Section 10(11).
+          </div>
+          <p class="calc-estimate-note" style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-secondary); text-align:center;">Assumes continuous employment without premature withdrawals until superannuation.</p>
+        </div>
+      </div>
+
+      <!-- Year-by-Year EPF Progression Schedule Table -->
+      <div style="margin-top:42px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-lg); padding:36px; box-shadow:var(--shadow-sm);">
+        <h3 style="font-size:1.35rem; font-weight:800; color:var(--text-primary); margin-bottom:8px;">Year-by-Year EPF Accumulation &amp; Interest Progression</h3>
+        <p style="font-size:0.96rem; color:var(--text-secondary); margin-bottom:20px;">Detailed career trajectory tracking wage progression, annual deposits, and compound interest credit up to age 58.</p>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Age</th>
+                <th>Monthly Basic Pay</th>
+                <th>Annual Employee (12%)</th>
+                <th>Annual Employer (3.67%)</th>
+                <th>Interest Added</th>
+                <th>Closing EPF Balance</th>
+              </tr>
+            </thead>
+            <tbody id="epf-schedule-tbody">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Deep Editorial Content matching SIP Layout -->
+      <div class="info-section-card" style="margin-top:42px;">
+        <h2 style="font-size:1.6rem; font-weight:800; color:var(--text-primary); margin-bottom:16px;">The Employees' Provident Fund (EPF): Complete Salaried Guide India</h2>
+        <p style="font-size:1.05rem; line-height:1.75; color:var(--text-secondary); margin-bottom:16px;">
+          The Employees' Provident Fund (EPF) is India's premier statutory retirement savings scheme for private-sector salaried employees, governed by the <em>Employees' Provident Funds and Miscellaneous Provisions Act, 1952</em> and administered by the Employees' Provident Fund Organisation (EPFO).
+        </p>
+        <p style="font-size:1.05rem; line-height:1.75; color:var(--text-secondary); margin-bottom:20px;">
+          Membership is mandatory for all establishments employing 20 or more persons, for every employee whose monthly basic wage is up to ₹15,000 at the time of joining (though most private corporate firms voluntarily extend EPF to all salaried staff regardless of wage ceiling).
+        </p>
+
+        <h3 style="font-size:1.3rem; font-weight:700; color:var(--text-primary); margin:28px 0 12px;">The Monthly 24% Contribution Breakdown</h3>
+        <p style="font-size:1rem; line-height:1.7; color:var(--text-secondary);">
+          Every month, exactly 24% of your Basic Wage + DA is deposited by the company:
+        </p>
+        <ul style="font-size:0.98rem; line-height:1.8; color:var(--text-secondary); margin-left:20px; margin-bottom:20px;">
+          <li><strong>Employee Share (12%):</strong> Deducted directly from your monthly gross pay. 100% of this goes into your EPF account.</li>
+          <li><strong>Employer Share (12%):</strong> Paid by the employer and split into two schemes:
+            <ul style="margin-top:6px;">
+              <li><strong>8.33%</strong> goes into the <em>Employees' Pension Scheme (EPS)</em>, capped at ₹1,250/month (8.33% of statutory ₹15,000 wage ceiling).</li>
+              <li><strong>3.67%</strong> (plus any excess basic pay above ₹15,000) goes into your EPF account and compounds with interest.</li>
+            </ul>
+          </li>
+          <li><strong>EDLI (0.5%):</strong> Additional insurance coverage up to ₹7 Lakh provided free of cost by the employer.</li>
+        </ul>
+
+        <h3 style="font-size:1.3rem; font-weight:700; color:var(--text-primary); margin:28px 0 12px;">Step-by-Step Numerical Example in INR</h3>
+        <p style="font-size:1rem; line-height:1.7; color:var(--text-secondary);">
+          Assume an employee aged 28 joins an IT firm in Bengaluru with a starting monthly Basic Wage of ₹30,000, receiving 5% annual hikes, and compounding at 8.25% EPFO interest until superannuation at age 58 (30 years of service):
+        </p>
+        <ul style="font-size:0.98rem; line-height:1.8; color:var(--text-secondary); margin-left:20px; margin-bottom:20px;">
+          <li><strong>Year 1 Monthly Employee EPF:</strong> 12% of ₹30,000 = ₹3,600/month (₹43,200/year).</li>
+          <li><strong>Year 1 Monthly Employer EPS:</strong> 8.33% of ₹15,000 ceiling = ₹1,250/month.</li>
+          <li><strong>Year 1 Monthly Employer EPF:</strong> ₹3,600 - ₹1,250 = ₹2,350/month (₹28,200/year).</li>
+          <li><strong>After 30 Years of Compounding:</strong> Employee deposits ₹28.68 Lakh, Employer adds ₹8.77 Lakh, and EPFO compound interest generates a massive <strong>₹47.06 Lakh</strong> in interest, delivering an accumulated corpus of <strong>₹84.52 Lakh</strong> at retirement.</li>
+        </ul>
+
+        <h3 style="font-size:1.3rem; font-weight:700; color:var(--text-primary); margin:28px 0 12px;">EPF vs PPF vs NPS Comparison</h3>
+        <div class="table-wrapper" style="margin:20px 0;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Scheme</th>
+                <th>Eligibility</th>
+                <th>Current Interest / Return</th>
+                <th>Tax Treatment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700;">EPF (Provident Fund)</td>
+                <td>Salaried employees (Organized sector)</td>
+                <td>8.25% p.a. (Govt Guaranteed)</td>
+                <td>Exempt-Exempt-Exempt (EEE) up to ₹2.5L employee contribution</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;">PPF (Public Provident Fund)</td>
+                <td>All Indian citizens (Self-employed &amp; salaried)</td>
+                <td>7.10% p.a. (Govt Guaranteed)</td>
+                <td>100% EEE up to ₹1.5 Lakh/year</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;">NPS (National Pension System)</td>
+                <td>All Indian citizens (Ages 18-70)</td>
+                <td>Market-linked (10-12% expected)</td>
+                <td>60% tax-free lump-sum + 40% annuity</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FAQ Section Accordion matching SIP page -->
+      <div class="info-section-card" style="margin-top:42px;">
+        <h2 style="font-size:1.5rem; font-weight:800; color:var(--text-primary); margin-bottom:24px;">Frequently Asked Questions About EPF</h2>
+        <div class="faq-list">
+          <details class="faq-item" style="border-bottom:1px solid var(--border-soft); padding:16px 0;">
+            <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--text-primary);">Is EPF withdrawal taxable when switching jobs?</summary>
+            <p style="margin-top:10px; font-size:0.98rem; line-height:1.7; color:var(--text-secondary);">
+              If you withdraw EPF before completing 5 years of continuous service (across all employers combined), the entire accumulated corpus becomes taxable retrospectively, and TDS of 10% (under Section 192A) is deducted if the withdrawal amount exceeds ₹50,000. If you transfer your EPF account using your Universal Account Number (UAN), the service tenure is aggregated and remains 100% tax-free.
+            </p>
+          </details>
+
+          <details class="faq-item" style="border-bottom:1px solid var(--border-soft); padding:16px 0;">
+            <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--text-primary);">What is the ₹2.5 Lakh annual tax threshold on EPF interest?</summary>
+            <p style="margin-top:10px; font-size:0.98rem; line-height:1.7; color:var(--text-secondary);">
+              Introduced in Finance Act 2021, if an employee's own voluntary or statutory EPF contribution exceeds ₹2,50,000 in a single financial year, interest accrued on the excess contribution amount is taxable as "Income from Other Sources" at your individual income tax slab rates.
+            </p>
+          </details>
+
+          <details class="faq-item" style="border-bottom:1px solid var(--border-soft); padding:16px 0;">
+            <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--text-primary);">Can I increase my monthly contribution through Voluntary Provident Fund (VPF)?</summary>
+            <p style="margin-top:10px; font-size:0.98rem; line-height:1.7; color:var(--text-secondary);">
+              Yes. Employees can voluntarily contribute up to 100% of their Basic Pay + DA into VPF. VPF earns the exact same high government-guaranteed interest rate (8.25%) as regular EPF, making it one of the safest high-yield debt investments in India.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Thinking Framework -->
+      <div id="thinking-framework" style="margin-top:42px; background:var(--bg-elevated); border:1px solid var(--border-soft); border-radius:var(--radius-lg); padding:32px;">
+        <h3 style="font-size:1.3rem; font-weight:800; color:var(--text-primary); margin-bottom:12px;">How to Maximize Your EPF Wealth</h3>
+        <p style="font-size:1rem; line-height:1.7; color:var(--text-secondary); margin-bottom:16px;">
+          To ensure your EPF delivers its full compounding potential for your retirement:
+        </p>
+        <ol style="font-size:0.98rem; line-height:1.8; color:var(--text-secondary); margin-left:20px;">
+          <li><strong>Never Withdraw During Job Switches:</strong> Always initiate an online transfer using the Unified Member Portal (UAN). Transferring preserves your continuous service clock and prevents tax penalties.</li>
+          <li><strong>Activate Voluntary Provident Fund (VPF):</strong> If you want guaranteed debt allocation, VPF offers 8.25% tax-free up to ₹2.5 Lakh/year, beating bank FDs and debt mutual funds by 2-3%.</li>
+          <li><strong>Verify Monthly Credits on Unified Portal:</strong> Download your electronic passbook from EPFO annually to confirm employer compliance and proper interest crediting.</li>
+        </ol>
+      </div>
+
+      <!-- Regulatory & Educational References -->
+      <div style="margin-top:42px; padding:24px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md);">
+        <h4 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin-bottom:10px;">Sources, Standards &amp; Regulatory References</h4>
+        <ul style="font-size:0.88rem; color:var(--text-secondary); line-height:1.7; list-style-type:disc; padding-left:20px;">
+          <li>Employees' Provident Fund Organisation (EPFO) — Central Board of Trustees (CBT) Annual Interest Circulars.</li>
+          <li>Ministry of Labour and Employment, Government of India — The EPF &amp; MP Act, 1952.</li>
+          <li>Central Board of Direct Taxes (CBDT) — Section 10(11) &amp; Rule 9D for Taxing EPF Interest Above ₹2.5 Lakh.</li>
+        </ul>
+      </div>
+
+      <!-- Related Tools Grid -->
+      <div style="margin-top:42px;">
+        <h3 style="font-size:1.25rem; font-weight:800; color:var(--text-primary); margin-bottom:18px;">Related Calculators &amp; Retirement Tools</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px;">
+          <a href="/nps-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">NPS Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Combine EPF with market-linked National Pension System returns.</div>
+          </a>
+          <a href="/ppf-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">PPF Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Calculate 15-year government guaranteed public provident fund growth.</div>
+          </a>
+          <a href="/gratuity-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">Gratuity Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Compute statutory resignation and retirement gratuity under 15/26 rule.</div>
+          </a>
+          <a href="/in-hand-salary-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">In-Hand Salary Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">See how EPF and professional tax impact your monthly pay slip.</div>
+          </a>
         </div>
       </div>
     </div>
-
-    <!-- Educational section -->
-    <article style="line-height: 1.75; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 3rem;">
-      <h2>Understanding the EPF Contribution Split</h2>
-      <p>
-        Every month, a total contribution of <strong>24% of your Basic Wage + DA</strong> is deposited into your Provident Fund accounts:
-      </p>
-      <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-        <li><strong>Employee Contribution (12%):</strong> 100% of this goes into your EPF account and earns statutory interest.</li>
-        <li><strong>Employer Contribution (12%):</strong> Split into two distinct components:
-          <ul style="margin-top: 0.5rem;">
-            <li><strong>8.33%</strong> goes into the Employees' Pension Scheme (EPS), subject to a statutory wage ceiling of ₹15,000 (i.e. capped at ₹1,250 per month).</li>
-            <li><strong>3.67%</strong> (plus any excess above the EPS cap) goes into your EPF account and compounds with interest.</li>
-          </ul>
-        </li>
-      </ul>
-
-      <h2>Tax Rules on EPF Contributions</h2>
-      <p>
-        Under Section 10(11) of the Income-tax Act, interest earned on annual employee contributions exceeding <strong>₹2,50,000</strong> (or ₹5,00,000 where the employer does not contribute) is taxable as income in the hands of the employee.
-      </p>
-
-      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px;">
-        <h3 style="margin-top: 0; font-size: 1.15rem;">Statutory Authority & Official Resources</h3>
-        <ul style="font-size: 0.92rem; line-height: 1.8; margin-bottom: 0;">
-          <li><strong>Employees' Provident Fund Organisation (EPFO):</strong> <a href="https://www.epfindia.gov.in" target="_blank" rel="noopener noreferrer">epfindia.gov.in — Rate Circulars & Passbook Portal</a>.</li>
-          <li><strong>Related Guide:</strong> Read our detailed <a href="/epf-withdrawal-rules-25-percent-minimum-balance.html" style="color: var(--emerald); text-decoration: underline; font-weight: 600;">EPF Withdrawal Rules & Balance Regulations Guide</a>.</li>
-        </ul>
-      </div>
-    </article>
   </main>
 
-  <footer class="site-footer" style="background:#0F172A; color:#E2E8F0; padding:2.5rem 1.25rem; margin-top:3rem;">
-    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:2rem;">
-      <div>
-        <img src="logo-footer.svg" alt="Calculatorship" width="150" height="36" style="margin-bottom:1rem;">
-        <p style="font-size:0.88rem; color:#94A3B8; line-height:1.6;">Calculatorship is a free financial calculation platform maintained by Tejas, an engineering student in India.</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/"><img src="/logo-footer.svg" alt="Calculatorship — Free Financial Calculators for Indian Investors" width="200" height="36" style="display:block;" loading="lazy"></a>
+          <p class="footer-tagline">Independent financial calculators and educational guides explaining how money maths works for Indian salaried professionals and retail investors.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h3>Calculators</h3>
+            <ul>
+              <li><a href="/">SIP Calculator</a></li>
+              <li><a href="/lumpsum.html">Lumpsum Calculator</a></li>
+              <li><a href="/step-up.html">Step-Up SIP</a></li>
+              <li><a href="/cagr-calculator.html">CAGR Calculator</a></li>
+              <li><a href="/compound-interest-calculator.html">Compound Interest</a></li>
+              <li><a href="/ppf-calculator.html">PPF Calculator</a></li>
+              <li><a href="/epf-calculator.html">EPF Calculator</a></li>
+              <li><a href="/nps-calculator.html">NPS Calculator</a></li>
+              <li><a href="/fd-calculator.html">FD Calculator</a></li>
+              <li><a href="/rd-calculator.html">RD Calculator</a></li>
+              <li><a href="/calculators.html" style="font-weight:700; color:var(--emerald);">Browse All 21 Tools &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Legal &amp; Policy</h3>
+            <ul>
+              <li><a href="/editorial-policy.html">Editorial Policy</a></li>
+              <li><a href="/corrections.html">Corrections Log</a></li>
+              <li><a href="/disclaimer.html">Disclaimer</a></li>
+              <li><a href="/terms.html">Terms of Use</a></li>
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/cookies.html">Cookie Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Platform</h3>
+            <ul>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="/blog.html">Blog &amp; Guides</a></li>
+              <li><a href="/sitemap.html">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Tools & Hubs</h3>
-        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
-          <li><a href="/calculators.html" style="color:#94A3B8; text-decoration:none;">All Calculators</a></li>
-          <li><a href="/epf-calculator.html" style="color:#94A3B8; text-decoration:none;">EPF Calculator</a></li>
-          <li><a href="/ppf-calculator.html" style="color:#94A3B8; text-decoration:none;">PPF Calculator</a></li>
-          <li><a href="/in-hand-salary-calculator.html" style="color:#94A3B8; text-decoration:none;">In-Hand Salary</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <div class="footer-disclaimer">
+          <strong>Educational Resource Notice:</strong> Calculatorship is an independent educational site run by a student. It is not registered with SEBI, AMFI, or RBI. Content and calculation tools are for educational awareness only and never constitute investment, tax, or legal advice. Mutual fund investments are subject to market risks. Real returns and tax rules vary. Check official notices and consult a qualified adviser before acting.
+        </div>
+        <div class="footer-copy">
+          &copy; 2026 Calculatorship. All rights reserved. | <a href="/disclaimer.html">Disclaimer</a> | <a href="/terms.html">Terms</a> | <a href="/privacy.html">Privacy</a>
+        </div>
       </div>
-      <div>
-        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Editorial & Transparency</h3>
-        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
-          <li><a href="/editorial-policy.html" style="color:#94A3B8; text-decoration:none;">Editorial Policy</a></li>
-          <li><a href="/corrections.html" style="color:#94A3B8; text-decoration:none;">Corrections Log</a></li>
-          <li><a href="/disclaimer.html" style="color:#94A3B8; text-decoration:none;">Disclaimer</a></li>
-          <li><a href="/contact.html" style="color:#94A3B8; text-decoration:none;">Contact & Feedback</a></li>
-        </ul>
-      </div>
-    </div>
-    <div style="max-width:1100px; margin:2rem auto 0; padding-top:1.5rem; border-top:1px solid #334155; text-align:center; font-size:0.82rem; color:#64748B;">
-      © 2026 Calculatorship.in. Non-commercial educational resource.
     </div>
   </footer>
 
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" stroke-width="2.5" fill="none" stroke="currentColor"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script src="theme.js?v=2.2"></script>
+
   <script>
     (function() {
-      const basicInput = document.getElementById('epf-basic');
-      const ageInput = document.getElementById('epf-age');
-      const hikeInput = document.getElementById('epf-hike');
-      const rateInput = document.getElementById('epf-rate');
-      const btn = document.getElementById('btn-calc-epf');
+      function syncPair(numId, rangeId, callback) {
+        const num = document.getElementById(numId);
+        const range = document.getElementById(rangeId);
+        if (!num || !range) return;
 
-      function calculate() {
-        let basic = Math.max(0, parseFloat(basicInput.value) || 0);
-        const age = Math.min(57, Math.max(18, parseInt(ageInput.value, 10) || 28));
-        const hike = Math.max(0, parseFloat(hikeInput.value) || 0) / 100;
-        const annualRate = Math.max(0, parseFloat(rateInput.value) || 0) / 100;
+        num.addEventListener('input', () => {
+          range.value = num.value;
+          callback();
+        });
+        range.addEventListener('input', () => {
+          num.value = range.value;
+          callback();
+        });
+      }
+
+      function calculateEPF() {
+        let basic = Math.max(0, parseFloat(document.getElementById('epf-basic').value) || 0);
+        const age = Math.min(57, Math.max(18, parseInt(document.getElementById('epf-age').value, 10) || 28));
+        const hike = Math.max(0, parseFloat(document.getElementById('epf-hike').value) || 0) / 100;
+        const annualRate = Math.max(0, parseFloat(document.getElementById('epf-rate').value) || 0) / 100;
         const monthlyRate = annualRate / 12;
 
         const years = 58 - age;
@@ -232,34 +510,76 @@
         let totalEmployee = 0;
         let totalEmployer = 0;
 
+        let tableRows = '';
+        let currentBasic = basic;
+
         for (let y = 1; y <= years; y++) {
-          const empMonthly = basic * 0.12;
-          // Employer EPF share: 3.67% of full basic + any excess basic over 15000 * 8.33%
-          let epsMonthly = Math.min(basic, 15000) * 0.0833;
-          let emrEpfMonthly = (basic * 0.12) - epsMonthly;
+          const empMonthly = currentBasic * 0.12;
+          const epsMonthly = Math.min(currentBasic, 15000) * 0.0833;
+          const emrEpfMonthly = (currentBasic * 0.12) - epsMonthly;
+
+          const yrStartBal = epfBalance;
+          const yrEmpContrib = empMonthly * 12;
+          const yrEmrContrib = emrEpfMonthly * 12;
 
           for (let m = 1; m <= 12; m++) {
             totalEmployee += empMonthly;
             totalEmployer += emrEpfMonthly;
             epfBalance = (epfBalance + empMonthly + emrEpfMonthly) * (1 + monthlyRate);
           }
-          basic = basic * (1 + hike);
+
+          const yrInterest = epfBalance - (yrStartBal + yrEmpContrib + yrEmrContrib);
+
+          tableRows += `
+            <tr>
+              <td style="font-weight:700;">Age ${age + y} (Yr ${y})</td>
+              <td>₹${Math.round(currentBasic).toLocaleString('en-IN')}</td>
+              <td>₹${Math.round(yrEmpContrib).toLocaleString('en-IN')}</td>
+              <td>₹${Math.round(yrEmrContrib).toLocaleString('en-IN')}</td>
+              <td style="color:#059669; font-weight:600;">+₹${Math.round(yrInterest).toLocaleString('en-IN')}</td>
+              <td style="font-weight:700;">₹${Math.round(epfBalance).toLocaleString('en-IN')}</td>
+            </tr>
+          `;
+
+          currentBasic = currentBasic * (1 + hike);
         }
 
         const totalContributions = totalEmployee + totalEmployer;
         const totalInterest = Math.max(0, epfBalance - totalContributions);
 
-        document.getElementById('result-epf-corpus').textContent = '₹' + Math.round(epfBalance).toLocaleString('en-IN');
-        document.getElementById('result-epf-employee').textContent = '₹' + Math.round(totalEmployee).toLocaleString('en-IN');
-        document.getElementById('result-epf-employer').textContent = '₹' + Math.round(totalEmployer).toLocaleString('en-IN');
-        document.getElementById('result-epf-interest').textContent = '₹' + Math.round(totalInterest).toLocaleString('en-IN');
+        document.getElementById('res-epf-corpus').textContent = '₹' + Math.round(epfBalance).toLocaleString('en-IN');
+        document.getElementById('res-epf-employee').textContent = '₹' + Math.round(totalEmployee).toLocaleString('en-IN');
+        document.getElementById('res-epf-employer').textContent = '₹' + Math.round(totalEmployer).toLocaleString('en-IN');
+        document.getElementById('res-epf-interest').textContent = '₹' + Math.round(totalInterest).toLocaleString('en-IN');
+
+        // Donut Chart
+        const interestRatio = epfBalance > 0 ? (totalInterest / epfBalance) * 100 : 0;
+        const contribRatio = 100 - interestRatio;
+
+        const donutSegment = document.getElementById('epf-donut-segment');
+        if (donutSegment) {
+          const dashVal = Math.min(Math.max(interestRatio, 0), 100);
+          donutSegment.setAttribute('stroke-dasharray', `${dashVal.toFixed(1)} ${(100 - dashVal).toFixed(1)}`);
+        }
+
+        const legInterest = document.getElementById('epf-donut-leg-interest');
+        const legContrib = document.getElementById('epf-donut-leg-contrib');
+        if (legInterest) legInterest.textContent = `Interest: ${interestRatio.toFixed(1)}%`;
+        if (legContrib) legContrib.textContent = `Contributions: ${contribRatio.toFixed(1)}%`;
+
+        // Dynamic Table
+        const tbody = document.getElementById('epf-schedule-tbody');
+        if (tbody) {
+          tbody.innerHTML = tableRows;
+        }
       }
 
-      btn.addEventListener('click', calculate);
-      [basicInput, ageInput, hikeInput, rateInput].forEach(el => {
-        el.addEventListener('input', calculate);
-        el.addEventListener('change', calculate);
-      });
+      syncPair('epf-basic-num', 'epf-basic', calculateEPF);
+      syncPair('epf-age-num', 'epf-age', calculateEPF);
+      syncPair('epf-hike-num', 'epf-hike', calculateEPF);
+      syncPair('epf-rate-num', 'epf-rate', calculateEPF);
+
+      calculateEPF();
     })();
   </script>
 </body>
