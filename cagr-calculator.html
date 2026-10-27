@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="wI-yq01MPBD-S1JZtupXa2CAdSvWceD5Kv0FvPJFDM8">
+  <meta name="google-adsense-account" content="ca-pub-7598871729388798">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598871729388798" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0C93Q0VBQP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0C93Q0VBQP');
+  </script>
+  <title>CAGR Calculator India — Compound Annual Growth Rate & Reverse CAGR</title>
+  <meta name="description" content="Calculate Compound Annual Growth Rate (CAGR) and reverse future value for mutual funds, stocks, and real estate investments in India. Accurate mathematical formulas.">
+  <link rel="canonical" href="https://www.calculatorship.in/cagr-calculator.html">
+  <meta name="author" content="Tejas, Calculatorship">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="CAGR Calculator India — Compound Annual Growth Rate & Reverse CAGR">
+  <meta property="og:description" content="Free CAGR Calculator for Indian investors. Compute annual compounding rate and compare CAGR vs XIRR.">
+  <meta property="og:url" content="https://www.calculatorship.in/cagr-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Calculatorship">
+  <meta property="og:image" content="https://www.calculatorship.in/og-image.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#F3F7F5">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css?v=2.2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CAGR Calculator India — Calculatorship",
+    "url": "https://www.calculatorship.in/cagr-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "description": "Calculate Compound Annual Growth Rate (CAGR) and reverse CAGR for lump-sum investments in India.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Calculatorship",
+      "url": "https://www.calculatorship.in",
+      "logo": "https://www.calculatorship.in/logo-light.svg"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="Calculatorship Home">
+        <img src="logo-light.svg" alt="Calculatorship Logo" width="160" height="38">
+      </a>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="/calculators.html" class="active">Calculators</a>
+        <a href="/blog.html">Guides</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb-bar">
+    <nav aria-label="Breadcrumbs" class="breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/calculators.html">Calculators</a></li>
+        <li aria-current="page">CAGR Calculator</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main id="main-content" style="max-width: 1040px; margin: 2rem auto; padding: 0 1.25rem;">
+    <div class="calc-hero" style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2.3rem; color: var(--text-primary); margin-bottom: 0.5rem;">CAGR Calculator (Compound Annual Growth Rate)</h1>
+      <div style="font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+        <span>Written by Tejas</span>
+        <span>•</span>
+        <span>Standard Geometric Mean Formula</span>
+        <span>•</span>
+        <span>Verified for FY 2026-27</span>
+      </div>
+      <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6;">
+        Calculate the smoothed annualized return of your investment across multiple years, or back-calculate the future value of capital using target CAGR.
+      </p>
+    </div>
+
+    <!-- Calculator Panel -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem; background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 2rem;">
+      <div>
+        <h2 style="font-size: 1.3rem; color: var(--text-primary); margin-top: 0; margin-bottom: 1.5rem;">Investment Values</h2>
+        
+        <div style="margin-bottom: 1.25rem;">
+          <label for="cagr-initial" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Initial Value / Cost of Investment (₹)</label>
+          <input type="number" id="cagr-initial" value="100000" min="100" max="100000000" step="5000" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label for="cagr-final" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Final Value / Current Portfolio Value (₹)</label>
+          <input type="number" id="cagr-final" value="250000" min="100" max="1000000000" step="5000" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label for="cagr-years" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Duration (Years)</label>
+          <input type="number" id="cagr-years" value="5" min="0.1" max="50" step="0.5" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <button type="button" id="btn-calc-cagr" style="width: 100%; padding: 0.85rem; background: var(--emerald); color: #fff; border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer;">Calculate CAGR</button>
+      </div>
+
+      <!-- Result Card -->
+      <div style="background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Compound Annual Growth Rate (CAGR)</span>
+          <div id="result-cagr-pct" style="font-size: 2.5rem; font-weight: 800; color: var(--emerald); margin: 0.5rem 0 1rem;">20.11% p.a.</div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-soft); margin: 1.25rem 0;">
+
+          <div style="font-size: 0.95rem; line-height: 2;">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Absolute Gain:</span>
+              <strong id="result-cagr-gain">₹1,50,000</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Absolute Return:</span>
+              <span id="result-cagr-abs">150.00%</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Growth Multiple:</span>
+              <strong id="result-cagr-multiple">2.50x</strong>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-soft); font-size: 0.82rem; color: var(--text-muted);">
+          Note: CAGR models one-time lump-sum growth. For recurring monthly SIPs, use XIRR.
+        </div>
+      </div>
+    </div>
+
+    <!-- Long-form content -->
+    <article style="line-height: 1.75; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 3rem;">
+      <h2>The Exact CAGR Formula</h2>
+      <p>
+        CAGR measures the annual growth rate of an investment over a specified time span, assuming the profit is reinvested at the end of each year:
+      </p>
+
+      <div style="background: var(--bg-elevated); border-left: 4px solid var(--emerald); padding: 1.25rem; margin: 1.5rem 0; font-family: monospace; font-size: 1.15rem;">
+        CAGR = ( (Final Value / Initial Value) ^ (1 / Years) ) - 1
+      </div>
+
+      <h2>CAGR vs XIRR: When to Use Which</h2>
+      <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li><strong>CAGR:</strong> Ideal for one-time point-to-point investments (such as purchasing a share or property in 2020 and selling in 2026). It does not account for interim cash inflows or withdrawals.</li>
+        <li><strong>XIRR (Extended Internal Rate of Return):</strong> Essential for monthly SIPs, recurring dividends, and SWPs where cash flows happen at different dates and each installment compounds for a different duration.</li>
+      </ul>
+
+      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Related In-Depth Guide</h3>
+        <p style="font-size: 0.95rem; margin-bottom: 0;">
+          Read our comprehensive comparison: <a href="/cagr-vs-xirr-vs-absolute-return-guide-india.html" style="color: var(--emerald); text-decoration: underline; font-weight: 600;">CAGR vs XIRR vs Absolute Return: Complete Mathematics Guide</a>.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" style="background:#0F172A; color:#E2E8F0; padding:2.5rem 1.25rem; margin-top:3rem;">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:2rem;">
+      <div>
+        <img src="logo-footer.svg" alt="Calculatorship" width="150" height="36" style="margin-bottom:1rem;">
+        <p style="font-size:0.88rem; color:#94A3B8; line-height:1.6;">Calculatorship is a free financial calculation platform maintained by Tejas, an engineering student in India.</p>
+      </div>
+      <div>
+        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Tools & Hubs</h3>
+        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
+          <li><a href="/calculators.html" style="color:#94A3B8; text-decoration:none;">All Calculators</a></li>
+          <li><a href="/cagr-calculator.html" style="color:#94A3B8; text-decoration:none;">CAGR Calculator</a></li>
+          <li><a href="/sip-calculator.html" style="color:#94A3B8; text-decoration:none;">SIP Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html" style="color:#94A3B8; text-decoration:none;">Compound Interest</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Editorial & Transparency</h3>
+        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
+          <li><a href="/editorial-policy.html" style="color:#94A3B8; text-decoration:none;">Editorial Policy</a></li>
+          <li><a href="/corrections.html" style="color:#94A3B8; text-decoration:none;">Corrections Log</a></li>
+          <li><a href="/disclaimer.html" style="color:#94A3B8; text-decoration:none;">Disclaimer</a></li>
+          <li><a href="/contact.html" style="color:#94A3B8; text-decoration:none;">Contact & Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="max-width:1100px; margin:2rem auto 0; padding-top:1.5rem; border-top:1px solid #334155; text-align:center; font-size:0.82rem; color:#64748B;">
+      © 2026 Calculatorship.in. Non-commercial educational resource.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const initInput = document.getElementById('cagr-initial');
+      const finalInput = document.getElementById('cagr-final');
+      const yearsInput = document.getElementById('cagr-years');
+      const btn = document.getElementById('btn-calc-cagr');
+
+      function calculate() {
+        const initial = Math.max(0.01, parseFloat(initInput.value) || 0);
+        const finalVal = Math.max(0, parseFloat(finalInput.value) || 0);
+        const years = Math.max(0.01, parseFloat(yearsInput.value) || 1);
+
+        const cagr = (Math.pow(finalVal / initial, 1 / years) - 1) * 100;
+        const gain = finalVal - initial;
+        const absReturn = (gain / initial) * 100;
+        const multiple = (finalVal / initial).toFixed(2);
+
+        document.getElementById('result-cagr-pct').textContent = cagr.toFixed(2) + '% p.a.';
+        document.getElementById('result-cagr-gain').textContent = '₹' + Math.round(gain).toLocaleString('en-IN');
+        document.getElementById('result-cagr-abs').textContent = absReturn.toFixed(2) + '%';
+        document.getElementById('result-cagr-multiple').textContent = multiple + 'x';
+      }
+
+      btn.addEventListener('click', calculate);
+      [initInput, finalInput, yearsInput].forEach(el => {
+        el.addEventListener('input', calculate);
+        el.addEventListener('change', calculate);
+      });
+    })();
+  </script>
+</body>
+</html>
