@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="wI-yq01MPBD-S1JZtupXa2CAdSvWceD5Kv0FvPJFDM8">
+  <meta name="google-adsense-account" content="ca-pub-7598871729388798">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598871729388798" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0C93Q0VBQP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0C93Q0VBQP');
+  </script>
+  <title>Inflation Calculator India — Purchasing Power & Future Cost Simulator</title>
+  <meta name="description" content="Calculate the eroding impact of inflation on Indian Rupee purchasing power over 5 to 30 years. Simulate future living expenses based on historical CPI inflation.">
+  <link rel="canonical" href="https://www.calculatorship.in/inflation-calculator.html">
+  <meta name="author" content="Tejas, Calculatorship">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="Inflation Calculator India — Purchasing Power & Future Cost Simulator">
+  <meta property="og:description" content="Free Inflation Calculator for India. Calculate how CPI inflation erodes your wealth and estimate future living costs.">
+  <meta property="og:url" content="https://www.calculatorship.in/inflation-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Calculatorship">
+  <meta property="og:image" content="https://www.calculatorship.in/og-image.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#F3F7F5">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css?v=2.2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Inflation Calculator India — Calculatorship",
+    "url": "https://www.calculatorship.in/inflation-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "description": "Calculate inflation erosion and project future equivalent expenditure based on Indian Consumer Price Index (CPI) rates.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Calculatorship",
+      "url": "https://www.calculatorship.in",
+      "logo": "https://www.calculatorship.in/logo-light.svg"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="Calculatorship Home">
+        <img src="logo-light.svg" alt="Calculatorship Logo" width="160" height="38">
+      </a>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="/calculators.html" class="active">Calculators</a>
+        <a href="/blog.html">Guides</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb-bar">
+    <nav aria-label="Breadcrumbs" class="breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/calculators.html">Calculators</a></li>
+        <li aria-current="page">Inflation Calculator</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main id="main-content" style="max-width: 1040px; margin: 2rem auto; padding: 0 1.25rem;">
+    <div class="calc-hero" style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2.3rem; color: var(--text-primary); margin-bottom: 0.5rem;">Inflation Calculator India</h1>
+      <div style="font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+        <span>Written by Tejas</span>
+        <span>•</span>
+        <span>CPI Inflation Modeling</span>
+        <span>•</span>
+        <span>Verified for FY 2026-27</span>
+      </div>
+      <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6;">
+        Calculate how price inflation decreases the future purchasing power of your money, or determine what a present-day lifestyle will cost in 10, 20, or 30 years.
+      </p>
+    </div>
+
+    <!-- Calculator Panel -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem; background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 2rem;">
+      <div>
+        <h2 style="font-size: 1.3rem; color: var(--text-primary); margin-top: 0; margin-bottom: 1.5rem;">Expense & Inflation Inputs</h2>
+        
+        <div style="margin-bottom: 1.25rem;">
+          <label for="inf-amount" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Current Expense / Amount Today (₹)</label>
+          <input type="number" id="inf-amount" value="50000" min="100" max="100000000" step="5000" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label for="inf-rate" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Expected Annual Inflation Rate (%)</label>
+          <input type="number" id="inf-rate" value="6.0" min="1" max="20" step="0.5" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
+          <small style="color: var(--text-muted); font-size: 0.82rem;">Historical Indian CPI average is around 5.5% to 6.5%.</small>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label for="inf-years" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Years into the Future</label>
+          <input type="number" id="inf-years" value="15" min="1" max="50" step="1" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <button type="button" id="btn-calc-inf" style="width: 100%; padding: 0.85rem; background: var(--emerald); color: #fff; border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer;">Calculate Future Cost</button>
+      </div>
+
+      <!-- Result Card -->
+      <div style="background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Future Equivalent Cost</span>
+          <div id="result-inf-cost" style="font-size: 2.4rem; font-weight: 800; color: var(--emerald); margin: 0.5rem 0 1rem;">₹1,19,828</div>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            What ₹50,000 buys today will cost <strong id="result-inf-summary">₹1,19,828 in 15 years</strong> at 6.0% inflation.
+          </p>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-soft); margin: 1.25rem 0;">
+
+          <div style="font-size: 0.95rem; line-height: 2;">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Future Cost Multiple:</span>
+              <strong id="result-inf-multiplier">2.40x</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Purchasing Power of ₹50,000:</span>
+              <strong id="result-inf-power" style="color: #b91c1c;">₹20,863</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Cumulative Inflation:</span>
+              <span id="result-inf-cum">139.66%</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-soft); font-size: 0.82rem; color: var(--text-muted);">
+          Rule of 72: At 6% inflation, the cost of living doubles roughly every 12 years.
+        </div>
+      </div>
+    </div>
+
+    <!-- Educational content -->
+    <article style="line-height: 1.75; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 3rem;">
+      <h2>The Mathematics of Future Value and Purchasing Power</h2>
+      <p>
+        Inflation acts as reverse compounding against idle cash. The two fundamental formulas used in this simulator are:
+      </p>
+
+      <h3>1. Future Value of an Expense (FV)</h3>
+      <div style="background: var(--bg-elevated); border-left: 4px solid var(--emerald); padding: 1.25rem; margin: 1rem 0; font-family: monospace;">
+        FV = Present Amount × (1 + Inflation Rate)^Years
+      </div>
+
+      <h3>2. Future Purchasing Power (Present Real Value)</h3>
+      <div style="background: var(--bg-elevated); border-left: 4px solid var(--emerald); padding: 1.25rem; margin: 1rem 0; font-family: monospace;">
+        Purchasing Power = Present Amount ÷ (1 + Inflation Rate)^Years
+      </div>
+
+      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Companion Financial Guides</h3>
+        <ul style="font-size: 0.92rem; line-height: 1.8; margin-bottom: 0;">
+          <li><a href="/inflation-impact-on-savings-india.html" style="color: var(--emerald); text-decoration: underline; font-weight: 600;">How Inflation Silently Destroys Bank Savings in India</a></li>
+          <li><a href="/rule-of-72-114-144.html" style="color: var(--emerald); text-decoration: underline; font-weight: 600;">The Rule of 72, 114 & 144: Mental Math for Compounding & Inflation</a></li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" style="background:#0F172A; color:#E2E8F0; padding:2.5rem 1.25rem; margin-top:3rem;">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:2rem;">
+      <div>
+        <img src="logo-footer.svg" alt="Calculatorship" width="150" height="36" style="margin-bottom:1rem;">
+        <p style="font-size:0.88rem; color:#94A3B8; line-height:1.6;">Calculatorship is a free financial calculation platform maintained by Tejas, an engineering student in India.</p>
+      </div>
+      <div>
+        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Tools & Hubs</h3>
+        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
+          <li><a href="/calculators.html" style="color:#94A3B8; text-decoration:none;">All Calculators</a></li>
+          <li><a href="/inflation-calculator.html" style="color:#94A3B8; text-decoration:none;">Inflation Calculator</a></li>
+          <li><a href="/goal.html" style="color:#94A3B8; text-decoration:none;">Target Goal Planner</a></li>
+          <li><a href="/sip-calculator.html" style="color:#94A3B8; text-decoration:none;">SIP Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Editorial & Transparency</h3>
+        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
+          <li><a href="/editorial-policy.html" style="color:#94A3B8; text-decoration:none;">Editorial Policy</a></li>
+          <li><a href="/corrections.html" style="color:#94A3B8; text-decoration:none;">Corrections Log</a></li>
+          <li><a href="/disclaimer.html" style="color:#94A3B8; text-decoration:none;">Disclaimer</a></li>
+          <li><a href="/contact.html" style="color:#94A3B8; text-decoration:none;">Contact & Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="max-width:1100px; margin:2rem auto 0; padding-top:1.5rem; border-top:1px solid #334155; text-align:center; font-size:0.82rem; color:#64748B;">
+      © 2026 Calculatorship.in. Non-commercial educational resource.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const amtInput = document.getElementById('inf-amount');
+      const rInput = document.getElementById('inf-rate');
+      const yInput = document.getElementById('inf-years');
+      const btn = document.getElementById('btn-calc-inf');
+
+      function calculate() {
+        const amt = Math.max(0, parseFloat(amtInput.value) || 0);
+        const r = Math.max(0, parseFloat(rInput.value) || 0) / 100;
+        const years = Math.max(0, parseFloat(yInput.value) || 0);
+
+        const futureCost = amt * Math.pow(1 + r, years);
+        const power = years > 0 ? (amt / Math.pow(1 + r, years)) : amt;
+        const multiplier = amt > 0 ? (futureCost / amt).toFixed(2) : 0;
+        const cumInf = ((futureCost - amt) / (amt || 1)) * 100;
+
+        document.getElementById('result-inf-cost').textContent = '₹' + Math.round(futureCost).toLocaleString('en-IN');
+        document.getElementById('result-inf-summary').textContent = '₹' + Math.round(futureCost).toLocaleString('en-IN') + ' in ' + years + ' years';
+        document.getElementById('result-inf-multiplier').textContent = multiplier + 'x';
+        document.getElementById('result-inf-power').textContent = '₹' + Math.round(power).toLocaleString('en-IN');
+        document.getElementById('result-inf-cum').textContent = cumInf.toFixed(2) + '%';
+      }
+
+      btn.addEventListener('click', calculate);
+      [amtInput, rInput, yInput].forEach(el => {
+        el.addEventListener('input', calculate);
+        el.addEventListener('change', calculate);
+      });
+    })();
+  </script>
+</body>
+</html>
