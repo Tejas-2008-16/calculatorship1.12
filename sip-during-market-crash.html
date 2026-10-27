@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en-IN">
+<head>
+<meta charset="utf-8"/>
+<meta content="wI-yq01MPBD-S1JZtupXa2CAdSvWceD5Kv0FvPJFDM8" name="google-site-verification"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIP in Market Downturns: Rupee Cost Averaging Mechanics | Calculatorship</title>
+<meta content="An educational explanation of how Systematic Investment Plans function during market downturns: unit accumulation math, rupee cost averaging, and historical volatility." name="description"/>
+<link href="https://www.calculatorship.in/sip-during-market-crash" rel="canonical"/>
+<meta content="SIP in Market Downturns: Rupee Cost Averaging Mechanics | Calculatorship" property="og:title"/>
+<meta content="An educational explanation of how Systematic Investment Plans function during market downturns: unit accumulation math, rupee cost averaging, and historical volatility." property="og:description"/>
+<meta content="https://www.calculatorship.in/sip-during-market-crash" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="https://www.calculatorship.in/og-image.webp" property="og:image"/>
+<meta content="SIP During Market Volatility — Calculatorship" property="og:image:alt"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@calculatorship" name="twitter:site"/>
+<meta content="SIP in Market Downturns: Rupee Cost Averaging Mechanics | Calculatorship" name="twitter:title"/>
+<meta content="An educational explanation of how Systematic Investment Plans function during market downturns: unit accumulation math, rupee cost averaging, and historical volatility." name="twitter:description"/>
+<meta content="https://www.calculatorship.in/og-image.webp" name="twitter:image"/>
+<meta content="2026-07-11" property="article:published_time"/>
+<meta content="2026-10-26" property="article:modified_time"/>
+<meta content="Tejas" property="article:author"/>
+<meta content="SIP Investing" property="article:section"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="#F3F7F5" name="theme-color"/>
+<meta content="English" name="language"/>
+<meta content="Tejas" name="author"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="favicon.svg" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="style.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.calculatorship.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.calculatorship.in/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "SIP in Market Downturns",
+      "item": "https://www.calculatorship.in/sip-during-market-crash"
+    }
+  ]
+}</script>
+<link href="https://www.calculatorship.in/about" rel="author"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How SIPs Work During Market Downturns: Rupee Cost Averaging and Unit Math",
+  "url": "https://www.calculatorship.in/sip-during-market-crash",
+  "author": {
+    "@type": "Person",
+    "name": "Tejas",
+    "url": "https://www.calculatorship.in/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Calculatorship",
+    "url": "https://www.calculatorship.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.calculatorship.in/logo-light.svg"
+    }
+  },
+  "datePublished": "2026-07-27",
+  "dateModified": "2026-10-26",
+  "description": "An educational breakdown of how rupee cost averaging works mathematically when mutual fund Net Asset Values decline during market drawdowns."
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does rupee cost averaging work when fund NAVs fall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a Systematic Investment Plan, an investor commits a fixed rupee amount periodically. When the Net Asset Value (NAV) drops, that fixed allocation mathematically purchases a higher number of units, lowering the average cost per unit across the investment cycle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does market volatility guarantee positive returns in mutual funds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Mutual fund investments are subject to market risks, and market recovery or positive compounding is never guaranteed. Equities carry risk of capital loss."
+      }
+    }
+  ]
+}</script></head>
+<body>
+<div class="read-progress" id="readProgress"></div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a aria-label="Calculatorship Homepage" class="brand" href="/">
+<img alt="Calculatorship — Free Financial Calculators for Indian Investors" height="38" loading="lazy" src="/logo-light.svg" width="220"/>
+</a>
+<nav aria-label="Primary Navigation" class="main-nav">
+<div class="nav-dropdown">
+<a class="nav-dropdown-toggle" href="/">Calculators</a>
+<ul class="nav-dropdown-menu" role="menu">
+<li><a href="/">SIP Calculator</a></li>
+<li><a href="/lumpsum">Lumpsum Calculator</a></li>
+<li><a href="/step-up">Step-Up SIP</a></li>
+<li><a href="/goal">Goal Planner</a></li>
+<li><a href="/ppf-calculator">PPF Calculator</a></li>
+<li><a href="/swp-calculator">SWP Calculator</a></li>
+<li><a href="/emi-calculator">Loan EMI &amp; Prepay</a></li>
+<li class="nav-dropdown-divider" role="separator"></li>
+<li><a href="/fd-calculator">FD Calculator</a></li>
+<li><a href="/budget-planner">Budget Planner</a></li>
+<li><a href="/income-tax-calculator">Tax Calculator</a></li>
+</ul>
+</div>
+<a href="/blog">Blog &amp; Guides</a>
+<a href="/about">About</a>
+<a href="/contact">Contact</a>
+</nav>
+<div class="header-actions">
+<button aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" id="nav-toggle" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<main id="main-content">
+<div class="breadcrumb-bar">
+<nav aria-label="Breadcrumbs" class="breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/blog">Blog</a></li>
+<li aria-current="page">SIP in Market Downturns</li>
+</ol>
+</nav>
+</div>
+<header class="article-header">
+<span class="article-cat" style="color: var(--gold);">Investment Concepts</span>
+<h1>How SIPs Work During Market Downturns: Rupee Cost Averaging and Unit Math</h1>
+<div aria-label="Educational Disclaimer" class="educational-disclaimer" role="note" style="background:#fffbeb; border-left:4px solid #f59e0b; padding:1rem 1.25rem; margin:1.5rem 0; border-radius:0 8px 8px 0; font-size:0.9rem; color:#78350f; line-height:1.65;">
+<strong>Educational content only.</strong> This page explains how a financial concept works. It is not investment, tax, legal or insurance advice, and it is not a recommendation to buy or sell anything. I am a student, not a SEBI-registered adviser or a Chartered Accountant. Tax rules, interest rates and limits change, so check the official source linked below before you act, and speak to a qualified professional about your own situation. Mutual fund investments are subject to market risks, and past performance does not guarantee future returns.
+</div>
+<p class="article-intro">I'm Tejas, a student. This is what I learned about the mathematics of unit accumulation and rupee cost averaging when equity markets decline, written with AI assistance and checked against AMFI educational materials. It's not advice.</p>
+<div class="article-meta">
+<span>Updated: October 2026</span>
+<span>By Tejas</span>
+</div>
+</header>
+<div class="article-wrap">
+<article class="article-main" id="article-body">
+<a class="back-to-blog" href="/blog">← Back to Articles</a>
+<div class="article-body">
+<h2 id="rca-math">1. The Mathematics of Rupee Cost Averaging</h2>
+<p>In a Systematic Investment Plan (SIP), an investor commits a fixed financial amount at scheduled intervals (such as monthly). Because the contribution remains constant in rupee terms, the number of units allotted varies inversely with the scheme's Net Asset Value (NAV):</p>
+<p style="text-align:center; font-weight:700; background:#f8fafc; padding:12px; border-radius:6px; border:1px solid #e2e8f0;">Units Allotted = Fixed Monthly Installment ÷ Applicable NAV</p>
+<p>When market valuations decline and the scheme's NAV decreases, each fixed rupee installment purchases a mathematically higher number of units. Conversely, when valuations appreciate, each installment buys fewer units.</p>
+
+<h2 id="hypothetical-comparison">2. Hypothetical Numerical Illustration: Three Market Scenarios</h2>
+<p>To examine how unit accumulation functions during a correction and subsequent recovery, consider a hypothetical investor committing ₹10,000 monthly over 6 consecutive months across three different simulated price paths.</p>
+<table style="width:100%; border-collapse:collapse; margin:24px 0; font-size:0.9rem;">
+<thead>
+<tr style="background:var(--surface); border-bottom:2px solid var(--border-soft);">
+<th style="padding:10px; text-align:left;">Month</th>
+<th style="padding:10px; text-align:center;">Scenario A (Rising NAV)</th>
+<th style="padding:10px; text-align:center;">Scenario B (Flat NAV)</th>
+<th style="padding:10px; text-align:center;">Scenario C (Downturn &amp; Recovery)</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border-soft);">
+<td style="padding:10px;">Month 1 (₹10,000)</td>
+<td style="padding:10px; text-align:center;">NAV ₹100 (100 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹100 (100 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹100 (100 units)</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border-soft);">
+<td style="padding:10px;">Month 2 (₹10,000)</td>
+<td style="padding:10px; text-align:center;">NAV ₹105 (95.2 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹100 (100 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹80 (125 units)</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border-soft);">
+<td style="padding:10px;">Month 3 (₹10,000)</td>
+<td style="padding:10px; text-align:center;">NAV ₹110 (90.9 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹100 (100 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹70 (142.9 units)</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border-soft);">
+<td style="padding:10px;">Month 4 (₹10,000)</td>
+<td style="padding:10px; text-align:center;">NAV ₹115 (87.0 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹100 (100 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹75 (133.3 units)</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border-soft);">
+<td style="padding:10px;">Month 5 (₹10,000)</td>
+<td style="padding:10px; text-align:center;">NAV ₹120 (83.3 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹100 (100 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹90 (111.1 units)</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border-soft);">
+<td style="padding:10px;">Month 6 (₹10,000)</td>
+<td style="padding:10px; text-align:center;">NAV ₹125 (80.0 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹100 (100 units)</td>
+<td style="padding:10px; text-align:center;">NAV ₹100 (100 units)</td>
+</tr>
+<tr style="background:var(--surface); font-weight:700;">
+<td style="padding:10px;">Total Units Accumulated</td>
+<td style="padding:10px; text-align:center;">536.4 units</td>
+<td style="padding:10px; text-align:center;">600.0 units</td>
+<td style="padding:10px; text-align:center;">712.3 units</td>
+</tr>
+<tr style="background:var(--surface); font-weight:700;">
+<td style="padding:10px;">Valuation at End Month NAV</td>
+<td style="padding:10px; text-align:center;">₹67,050 (@ ₹125)</td>
+<td style="padding:10px; text-align:center;">₹60,000 (@ ₹100)</td>
+<td style="padding:10px; text-align:center;">₹71,230 (@ ₹100)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: This table is an arithmetic simulation demonstrating how units are calculated across varying prices. It does not represent historical performance or future projections of any specific scheme.</em></p>
+
+<h2 id="historical-context">3. Historical Market Drawdowns in India</h2>
+<p>Indian equity markets have historically experienced cyclical corrections. For instance, during the 2008 Global Financial Crisis and the March 2020 pandemic onset, broad benchmark indices such as the Nifty 50 and BSE Sensex experienced notable peak-to-trough drawdowns before eventual recoveries. However, market timing remains mathematically challenging because recovery phases often occur rapidly, making individual entry and exit forecasting uncertain.</p>
+
+<h2 id="how-to-think">4. How to Think About This Yourself</h2>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:1.25rem 1.5rem; margin:1.5rem 0;">
+<p style="margin:0 0 0.75rem; font-weight:600; color:#1e293b;">When assessing your portfolio during market corrections, consider:</p>
+<ul style="margin:0; padding-left:1.25rem; line-height:1.75; color:#334155; font-size:0.95rem;">
+<li>What is the remaining investment horizon for your financial goals? Capital required in the near term (e.g., under 3 years) should generally not be exposed to equity market volatility.</li>
+<li>Do you have an adequate emergency fund (typically 3 to 6 months of living expenses in liquid instruments) so that you are not forced to liquidate equity units at depressed prices?</li>
+<li>Does your overall asset allocation match your personal risk tolerance, or is your equity exposure causing undue stress?</li>
+</ul>
+</div>
+
+<div style="background:#f1f5f9; border-left:4px solid #64748b; padding:1rem 1.25rem; margin:1.5rem 0; border-radius:0 8px 8px 0; font-size:0.92rem; color:#334155; line-height:1.65;">
+<strong>Where to get personalised help:</strong> For individualized advice on asset allocation, rebalancing, or risk assessment during market downturns, consult a SEBI-registered Investment Adviser (RIA). The official registry is available at <a href="https://www.sebi.gov.in" target="_blank" rel="noopener noreferrer">sebi.gov.in</a>. For tax implications regarding redemptions and capital loss set-offs, consult a Chartered Accountant.
+</div>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+<div style="margin-bottom: 1.5rem;">
+<h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">What is the primary difference between a SIP pause and a redemption?</h3>
+<p style="margin-top: 0;">Pausing an SIP temporarily halts future monthly debits from your bank account without selling any existing units. A redemption, on the other hand, sells your accumulated units back to the fund house at the prevailing NAV, which realizes capital gains or losses and triggers tax obligations.</p>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Does continuing an SIP eliminate investment risk?</h3>
+<p style="margin-top: 0;">No. An SIP averages purchase costs over time but does not protect against prolonged bear markets or permanent capital loss in underperforming assets. Equity investments remain subject to general market risks.</p>
+</div>
+</div>
+<div class="author-box">
+<div class="author-avatar">T</div>
+<div class="author-info">
+<h4>Tejas <span class="author-verified-badge" title="Verified Author">✓</span></h4>
+<span class="author-role">Student &amp; Independent Creator</span>
+<p>Calculatorship provides free calculation tools and educational articles explaining financial formulas. I am a student researching SEBI circulars, AMFI data, and financial mathematics. Content is prepared with AI assistance for general educational awareness and is not investment advice.</p>
+</div>
+</div>
+<nav aria-label="Article Navigation" class="article-nav">
+<a class="article-nav-link prev" href="/how-to-read-a-mutual-fund-factsheet"><div class="nav-dir">← Previous Article</div><div class="nav-title">How to Read a Mutual Fund Factsheet</div></a>
+<a class="article-nav-link next" href="/rupee-cost-averaging-explained"><div class="nav-dir">Next Article →</div><div class="nav-title">Rupee Cost Averaging Explained</div></a>
+</nav></article>
+<aside class="article-sidebar">
+<div class="toc-card">
+<h4>Table of Contents</h4>
+<ol>
+<li><a href="#panic-impulse">The Panic Impulse</a></li>
+<li><a href="#historical-proof">Historical Proof: 2008 &amp; 2020</a></li>
+<li><a href="#rca-math">Rupee Cost Averaging Math</a></li>
+<li><a href="#three-investors">3 Investor Comparison</a></li>
+<li><a href="#step-up-crash">Step-Up SIP During a Crash</a></li>
+<li><a href="#action-plan">Crash-Proof Action Plan</a></li>
+<li><a href="#model-recovery">Model Your Recovery</a></li>
+</ol>
+</div>
+<div class="toc-card">
+<h4>Try Our Calculators</h4>
+<ol style="list-style:none;padding:0;">
+<li style="margin-bottom:12px;"><a class="btn btn-primary" href="/step-up.html" style="display:block;text-align:center;padding:10px;font-size:.85rem;">Step-Up SIP Calculator</a></li>
+<li style="margin-bottom:12px;"><a class="btn" href="/" style="display:block;text-align:center;padding:10px;font-size:.85rem;background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-sm);color:var(--text-primary);">SIP Calculator</a></li>
+<li><a class="btn" href="/lumpsum.html" style="display:block;text-align:center;padding:10px;font-size:.85rem;background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-sm);color:var(--text-primary);">Lumpsum Calculator</a></li>
+</ol>
+</div>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-top">
+<div class="footer-brand">
+<a href="/"><img alt="Calculatorship — Free Financial Calculators for Indian Investors" height="36" loading="lazy" src="/logo-footer.svg" style="display:block;" width="200"/></a>
+<p class="footer-tagline">Independent financial calculators and educational guides explaining how money maths works for Indian salaried professionals and retail investors.</p>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<h3>Calculators</h3>
+<ul>
+<li><a href="/">SIP Calculator</a></li>
+<li><a href="/lumpsum">Lumpsum Calculator</a></li>
+<li><a href="/step-up">Step-Up SIP</a></li>
+<li><a href="/goal">Goal Planner</a></li>
+<li><a href="/ppf-calculator">PPF Calculator</a></li>
+<li><a href="/swp-calculator">SWP Calculator</a></li>
+<li><a href="/emi-calculator">Loan EMI &amp; Prepay</a></li>
+<li><a href="/fd-calculator">FD Calculator</a></li>
+<li><a href="/budget-planner">Budget Planner</a></li>
+<li><a href="/income-tax-calculator">Tax Calculator</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Legal &amp; Policy</h3>
+<ul>
+<li><a href="/disclaimer">Disclaimer</a></li>
+<li><a href="/terms">Terms of Use</a></li>
+<li><a href="/privacy">Privacy Policy</a></li>
+<li><a href="/cookies">Cookie Policy</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Platform</h3>
+<ul>
+<li><a href="/about">About</a></li>
+<li><a href="/contact">Contact</a></li>
+<li><a href="/blog">Blog &amp; Guides</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-disclaimer">
+<strong>Educational Resource Notice:</strong> Calculatorship is an independent educational site run by a student. It is not registered with SEBI, AMFI, or RBI. Content and calculation tools are for educational awareness only and never constitute investment, tax, or legal advice. Mutual fund investments are subject to market risks. Real returns and tax rules vary. Check official notices and consult a qualified adviser before acting.
+        </div>
+<div class="footer-copy">
+          © 2026 Calculatorship. All rights reserved. | <a href="/disclaimer">Disclaimer</a> | <a href="/terms">Terms</a> | <a href="/privacy">Privacy</a>
+</div>
+</div>
+</div>
+</footer>
+<button aria-label="Back to top" class="back-to-top" id="back-to-top">
+<svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<script defer="" src="theme.js"></script>
+<script>
+    window.addEventListener('scroll', () => {
+      const el = document.getElementById('readProgress');
+      if (!el) return;
+      const h = document.body.scrollHeight - window.innerHeight;
+      el.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+    });
+  </script>
+<!-- COOKIE CONSENT BAR -->
+<div aria-label="Cookie consent" aria-live="polite" class="cookie-bar" id="cookie-bar" role="dialog">
+<div class="cookie-bar__inner">
+<div class="cookie-bar__text">
+<strong>We use cookies</strong> to improve your experience and serve relevant ads.
+      <a class="cookie-bar__link" href="/cookies.html">Cookie Policy</a>
+</div>
+<div class="cookie-bar__actions">
+<button aria-expanded="false" class="cookie-btn cookie-btn--outline" id="cookie-manage">Manage Preferences</button>
+<button class="cookie-btn cookie-btn--filled" id="cookie-accept">Accept All</button>
+</div>
+</div>
+</div>
+<!-- COOKIE PREFERENCES PANEL -->
+<div aria-label="Cookie preferences" aria-modal="true" class="cookie-panel" hidden="" id="cookie-panel" role="dialog">
+<div class="cookie-panel__card">
+<div class="cookie-panel__header">
+<span class="cookie-panel__brand">Calculatorship</span>
+<button aria-label="Close preferences" class="cookie-panel__close" id="cookie-panel-close">✕</button>
+</div>
+<p class="cookie-panel__desc">Control which cookies Calculatorship may use. Essential cookies cannot be disabled.</p>
+<div class="cookie-toggle-row">
+<div>
+<strong>Essential Cookies</strong>
+<p>Required for navigation, security, and calculator logic.</p>
+</div>
+<span class="cookie-badge">Always On</span>
+</div>
+<div class="cookie-toggle-row">
+<div>
+<strong>Analytics Cookies</strong>
+<p>Helps us understand how visitors use the site (Google Analytics).</p>
+</div>
+<label class="cookie-switch">
+<input checked="" id="toggle-analytics" type="checkbox"/>
+<span class="cookie-switch__slider"></span>
+</label>
+</div>
+<div class="cookie-toggle-row">
+<div>
+<strong>Advertising Cookies</strong>
+<p>Allows Google AdSense to serve relevant ads.</p>
+</div>
+<label class="cookie-switch">
+<input checked="" id="toggle-ads" type="checkbox"/>
+<span class="cookie-switch__slider"></span>
+</label>
+</div>
+<button class="cookie-btn cookie-btn--filled cookie-btn--full" id="cookie-save">Save Preferences</button>
+</div>
+</div>
+<script>
+(function () {
+  var BAR = document.getElementById('cookie-bar');
+  var PANEL = document.getElementById('cookie-panel');
+  var MANAGE = document.getElementById('cookie-manage');
+  var ACCEPT = document.getElementById('cookie-accept');
+  var SAVE = document.getElementById('cookie-save');
+  var CLOSE = document.getElementById('cookie-panel-close');
+  if (!BAR) return;
+  if (localStorage.getItem('calc_cookie_consent')) { BAR.style.display = 'none'; return; }
+  ACCEPT.addEventListener('click', function() {
+    localStorage.setItem('calc_cookie_consent', JSON.stringify({ analytics: true, ads: true }));
+    BAR.style.display = 'none';
+  });
+  MANAGE.addEventListener('click', function() {
+    PANEL.hidden = false;
+    MANAGE.setAttribute('aria-expanded', 'true');
+  });
+  CLOSE.addEventListener('click', function() { PANEL.hidden = true; });
+  SAVE.addEventListener('click', function() {
+    var prefs = {
+      analytics: document.getElementById('toggle-analytics').checked,
+      ads: document.getElementById('toggle-ads').checked
+    };
+    localStorage.setItem('calc_cookie_consent', JSON.stringify(prefs));
+    PANEL.hidden = true;
+    BAR.style.display = 'none';
+  });
+  PANEL.addEventListener('click', function(e) { if (e.target === PANEL) PANEL.hidden = true; });
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0C93Q0VBQP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0C93Q0VBQP');
+</script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="wI-yq01MPBD-S1JZtupXa2CAdSvWceD5Kv0FvPJFDM8">
+  <meta name="google-adsense-account" content="ca-pub-7598871729388798">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598871729388798" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0C93Q0VBQP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0C93Q0VBQP');
+  </script>
+  <title>Recurring Deposit (RD) Calculator — Quarterly Bank Compounding</title>
+  <meta name="description" content="Calculate bank Recurring Deposit (RD) maturity amount and interest earned using official Indian bank quarterly compounding rules. Compare SBI, HDFC & Post Office rates.">
+  <link rel="canonical" href="https://www.calculatorship.in/rd-calculator.html">
+  <meta name="author" content="Tejas, Calculatorship">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="Recurring Deposit (RD) Calculator — Quarterly Bank Compounding">
+  <meta property="og:description" content="Free RD Calculator for Indian depositors. Calculate monthly deposit maturity using official quarterly compounding methods.">
+  <meta property="og:url" content="https://www.calculatorship.in/rd-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Calculatorship">
+  <meta property="og:image" content="https://www.calculatorship.in/og-image.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#F3F7F5">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css?v=2.2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Recurring Deposit (RD) Calculator — Calculatorship",
+    "url": "https://www.calculatorship.in/rd-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "description": "Calculate bank RD maturity amount with quarterly compounding as practiced by Indian commercial banks and India Post.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Calculatorship",
+      "url": "https://www.calculatorship.in",
+      "logo": "https://www.calculatorship.in/logo-light.svg"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="Calculatorship Home">
+        <img src="logo-light.svg" alt="Calculatorship Logo" width="160" height="38">
+      </a>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="/calculators.html" class="active">Calculators</a>
+        <a href="/blog.html">Guides</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb-bar">
+    <nav aria-label="Breadcrumbs" class="breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/calculators.html">Calculators</a></li>
+        <li aria-current="page">RD Calculator</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main id="main-content" style="max-width: 1040px; margin: 2rem auto; padding: 0 1.25rem;">
+    <div class="calc-hero" style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2.3rem; color: var(--text-primary); margin-bottom: 0.5rem;">Recurring Deposit (RD) Calculator</h1>
+      <div style="font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+        <span>Written by Tejas</span>
+        <span>•</span>
+        <span>Quarterly Compounding Standard (RBI Norms)</span>
+        <span>•</span>
+        <span>Verified for FY 2026-27</span>
+      </div>
+      <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6;">
+        Calculate total maturity proceeds from your monthly recurring bank deposits using the precise quarterly compounding formula prescribed for Indian banks.
+      </p>
+    </div>
+
+    <!-- Calculator Panel -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem; background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 2rem;">
+      <div>
+        <h2 style="font-size: 1.3rem; color: var(--text-primary); margin-top: 0; margin-bottom: 1.5rem;">Deposit Schedule Inputs</h2>
+        
+        <div style="margin-bottom: 1.25rem;">
+          <label for="rd-monthly" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Monthly Installment (₹)</label>
+          <input type="number" id="rd-monthly" value="5000" min="500" max="1000000" step="500" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label for="rd-rate" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Annual Interest Rate (%)</label>
+          <input type="number" id="rd-rate" value="7.0" min="3" max="15" step="0.1" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label for="rd-months" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Tenure (Months)</label>
+          <input type="number" id="rd-months" value="12" min="6" max="120" step="3" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <button type="button" id="btn-calc-rd" style="width: 100%; padding: 0.85rem; background: var(--emerald); color: #fff; border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer;">Calculate Maturity</button>
+      </div>
+
+      <!-- Result Card -->
+      <div style="background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Estimated Maturity Value</span>
+          <div id="result-rd-maturity" style="font-size: 2.4rem; font-weight: 800; color: var(--emerald); margin: 0.5rem 0 1rem;">₹62,317</div>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            Calculated as: <strong>12 monthly deposits of ₹5,000 at 7.0% p.a. (Quarterly compounding)</strong>
+          </p>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-soft); margin: 1.25rem 0;">
+
+          <div style="font-size: 0.95rem; line-height: 2;">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Total Capital Deposited:</span>
+              <strong id="result-rd-invested">₹60,000</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Total Interest Earned:</span>
+              <strong id="result-rd-interest" style="color: var(--emerald);">₹2,317</strong>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-soft); font-size: 0.82rem; color: var(--text-muted);">
+          TDS applies under Section 194A if total bank interest exceeds ₹40,000/year (₹50,000 for senior citizens).
+        </div>
+      </div>
+    </div>
+
+    <!-- Long-form content -->
+    <article style="line-height: 1.75; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 3rem;">
+      <h2>How Indian Banks Calculate RD Interest (Quarterly Compounding)</h2>
+      <p>
+        In India, commercial banks (SBI, HDFC, ICICI, etc.) and India Post calculate recurring deposit returns on a <strong>quarterly compounding basis</strong>. Each monthly installment earns interest for the exact number of remaining quarters in the deposit tenure:
+      </p>
+
+      <div style="background: var(--bg-elevated); border-left: 4px solid var(--emerald); padding: 1.25rem; margin: 1.5rem 0; font-family: monospace;">
+        Maturity Sum = Σ [ P × (1 + r / 4)^(4 × t_i) ]
+      </div>
+      <p>
+        Where <em>t_i</em> is the remaining fraction of the year for each installment <em>i</em>. This method gives a slightly higher yield than simple interest or annual compounding.
+      </p>
+
+      <h2>Taxation Rules for Recurring Deposits (FY 2026-27)</h2>
+      <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li><strong>Taxable at Slab Rates:</strong> Unlike equity SIPs, interest earned on recurring deposits is fully taxable under "Income from Other Sources" according to your individual income tax slab.</li>
+        <li><strong>TDS Threshold:</strong> Banks deduct 10% TDS under Section 194A if total interest earned across all your fixed and recurring deposits in that bank branch exceeds <strong>₹40,000</strong> in a financial year (<strong>₹50,000</strong> for senior citizens).</li>
+        <li><strong>Form 15G / 15H:</strong> If your total taxable income is below the basic exemption limit, you can submit Form 15G (or Form 15H for seniors) to prevent TDS deduction.</li>
+      </ul>
+
+      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">In-Depth Companion Guide</h3>
+        <p style="font-size: 0.95rem; margin-bottom: 0;">
+          Read our comprehensive editorial breakdown: <a href="/recurring-deposit-rd-calculator-guide-india.html" style="color: var(--emerald); text-decoration: underline; font-weight: 600;">Recurring Deposit (RD) Complete Guide India</a>.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" style="background:#0F172A; color:#E2E8F0; padding:2.5rem 1.25rem; margin-top:3rem;">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:2rem;">
+      <div>
+        <img src="logo-footer.svg" alt="Calculatorship" width="150" height="36" style="margin-bottom:1rem;">
+        <p style="font-size:0.88rem; color:#94A3B8; line-height:1.6;">Calculatorship is a free financial calculation platform maintained by Tejas, an engineering student in India.</p>
+      </div>
+      <div>
+        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Tools & Hubs</h3>
+        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
+          <li><a href="/calculators.html" style="color:#94A3B8; text-decoration:none;">All Calculators</a></li>
+          <li><a href="/rd-calculator.html" style="color:#94A3B8; text-decoration:none;">RD Calculator</a></li>
+          <li><a href="/fd-calculator.html" style="color:#94A3B8; text-decoration:none;">FD Calculator</a></li>
+          <li><a href="/ppf-calculator.html" style="color:#94A3B8; text-decoration:none;">PPF Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Editorial & Transparency</h3>
+        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
+          <li><a href="/editorial-policy.html" style="color:#94A3B8; text-decoration:none;">Editorial Policy</a></li>
+          <li><a href="/corrections.html" style="color:#94A3B8; text-decoration:none;">Corrections Log</a></li>
+          <li><a href="/disclaimer.html" style="color:#94A3B8; text-decoration:none;">Disclaimer</a></li>
+          <li><a href="/contact.html" style="color:#94A3B8; text-decoration:none;">Contact & Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="max-width:1100px; margin:2rem auto 0; padding-top:1.5rem; border-top:1px solid #334155; text-align:center; font-size:0.82rem; color:#64748B;">
+      © 2026 Calculatorship.in. Non-commercial educational resource.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const mInput = document.getElementById('rd-monthly');
+      const rInput = document.getElementById('rd-rate');
+      const tInput = document.getElementById('rd-months');
+      const btn = document.getElementById('btn-calc-rd');
+
+      function calculate() {
+        const P = Math.max(0, parseFloat(mInput.value) || 0);
+        const r = Math.max(0, parseFloat(rInput.value) || 0) / 100;
+        const totalMonths = Math.max(1, parseInt(tInput.value, 10) || 12);
+
+        let maturity = 0;
+        for (let m = 1; m <= totalMonths; m++) {
+          const monthsRemaining = totalMonths - m + 1;
+          const quartersRemaining = (monthsRemaining * 3) / 12;
+          maturity += P * Math.pow(1 + r / 4, quartersRemaining);
+        }
+
+        const totalInvested = P * totalMonths;
+        const totalInterest = Math.max(0, maturity - totalInvested);
+
+        document.getElementById('result-rd-maturity').textContent = '₹' + Math.round(maturity).toLocaleString('en-IN');
+        document.getElementById('result-rd-invested').textContent = '₹' + Math.round(totalInvested).toLocaleString('en-IN');
+        document.getElementById('result-rd-interest').textContent = '₹' + Math.round(totalInterest).toLocaleString('en-IN');
+      }
+
+      btn.addEventListener('click', calculate);
+      [mInput, rInput, tInput].forEach(el => {
+        el.addEventListener('input', calculate);
+        el.addEventListener('change', calculate);
+      });
+    })();
+  </script>
+</body>
+</html>
