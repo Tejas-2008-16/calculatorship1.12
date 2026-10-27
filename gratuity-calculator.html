@@ -105,15 +105,64 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="site-logo" aria-label="Calculatorship Home">
-        <img src="logo-light.svg" alt="Calculatorship Logo" width="160" height="38">
+      <a href="/" class="brand" aria-label="Calculatorship Homepage">
+        <img src="/logo-light.svg" alt="Calculatorship — Free Financial Calculators for Indian Investors" width="220" height="38" loading="lazy">
       </a>
-      <nav class="site-nav" aria-label="Main Navigation">
-        <a href="/calculators.html" class="active">Calculators</a>
-        <a href="/blog.html">Guides</a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="/calculators.html" class="nav-dropdown-toggle">Calculators</a>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-dropdown-grid">
+              <div class="nav-dropdown-group">
+                <div class="nav-dropdown-group-title">Investing</div>
+                <ul class="nav-dropdown-group-list">
+                  <li><a href="/">SIP Calculator</a></li>
+                  <li><a href="/lumpsum.html">Lumpsum</a></li>
+                  <li><a href="/step-up.html">Step-Up SIP</a></li>
+                  <li><a href="/cagr-calculator.html">CAGR Calculator</a></li>
+                  <li><a href="/compound-interest-calculator.html">Compound Interest</a></li>
+                  <li><a href="/simple-interest-calculator.html">Simple Interest</a></li>
+                </ul>
+              </div>
+              <div class="nav-dropdown-group">
+                <div class="nav-dropdown-group-title">Retirement &amp; Banking</div>
+                <ul class="nav-dropdown-group-list">
+                  <li><a href="/ppf-calculator.html">PPF Calculator</a></li>
+                  <li><a href="/epf-calculator.html">EPF Calculator</a></li>
+                  <li><a href="/nps-calculator.html">NPS Calculator</a></li>
+                  <li><a href="/swp-calculator.html">SWP Calculator</a></li>
+                  <li><a href="/fd-calculator.html">FD Calculator</a></li>
+                  <li><a href="/rd-calculator.html">RD Calculator</a></li>
+                </ul>
+              </div>
+              <div class="nav-dropdown-group">
+                <div class="nav-dropdown-group-title">Tax, Salary &amp; Loans</div>
+                <ul class="nav-dropdown-group-list">
+                  <li><a href="/income-tax-calculator.html">Income Tax (FY 26-27)</a></li>
+                  <li><a href="/in-hand-salary-calculator.html">In-Hand Salary</a></li>
+                  <li><a href="/hra-calculator.html">HRA Exemption</a></li>
+                  <li><a href="/gratuity-calculator.html">Gratuity (15/26)</a></li>
+                  <li><a href="/gst-calculator.html">GST Calculator</a></li>
+                  <li><a href="/emi-calculator.html">Loan EMI &amp; Prepay</a></li>
+                  <li><a href="/budget-planner.html">50/30/20 Budget</a></li>
+                  <li><a href="/inflation-calculator.html">Inflation Planner</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-dropdown-footer">
+              <a href="/calculators.html">Browse All 21 Calculators Directory &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <a href="/blog.html">Blog &amp; Guides</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
       </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -146,180 +195,357 @@
       <strong>Educational Notice:</strong> This calculator provides mathematical estimates based on the Payment of Gratuity Act, 1972 and Section 10(10) of the Income-tax Act. I am a student, not a labour law consultant or Chartered Accountant. Service definitions and employer policies may vary. Always verify figures against your company's settlement sheet and consult a qualified CA.
     </div>
 
-    <!-- Interactive Calculator Panel -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem; background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 2rem;">
-      <!-- Inputs -->
-      <div>
-        <h2 style="font-size: 1.3rem; color: var(--text-primary); margin-top: 0; margin-bottom: 1.5rem;">Employee Service Details</h2>
-        
-        <div style="margin-bottom: 1.25rem;">
-          <label for="coverage-type" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Gratuity Act Coverage</label>
-          <select id="coverage-type" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem; background: var(--bg-elevated);">
-            <option value="covered" selected>Covered under Gratuity Act (15/26 days)</option>
-            <option value="not_covered">Not covered under Gratuity Act (15/30 days)</option>
-            <option value="fixed_term">Fixed-Term Employee (Pro-rata, 1+ year)</option>
-          </select>
-        </div>
-
-        <div style="margin-bottom: 1.25rem;">
-          <label for="monthly-wages" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Last Drawn Monthly Basic + DA (₹)</label>
-          <input type="number" id="monthly-wages" value="40000" min="1000" max="10000000" step="1000" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-          <small style="color: var(--text-muted); font-size: 0.82rem;">Basic pay + Dearness Allowance (DA) only. Excludes HRA & special allowance.</small>
-        </div>
-
-        <div style="margin-bottom: 1.25rem;">
-          <label for="service-years" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Completed Years of Continuous Service</label>
-          <input type="number" id="service-years" value="8" min="1" max="50" step="1" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-        </div>
-
-        <div style="margin-bottom: 1.5rem;">
-          <label for="service-months" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Additional Months in Final Year (0 to 11)</label>
-          <input type="number" id="service-months" value="0" min="0" max="11" step="1" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-          <small style="color: var(--text-muted); font-size: 0.82rem;">Under the Act, &gt; 6 months rounds up to an additional year.</small>
-        </div>
-
-        <button type="button" id="btn-recalculate" style="width: 100%; padding: 0.85rem; background: var(--emerald); color: #fff; border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer;">Calculate Gratuity</button>
+    <div class="calc-switcher-wrapper" style="margin-bottom: 24px;">
+      <div class="calc-switcher-bar">
+        <a class="calc-tab" href="/">SIP Calculator</a>
+        <a class="calc-tab" href="/lumpsum.html">Lumpsum</a>
+        <a class="calc-tab" href="/step-up.html">Step-Up SIP</a>
+        <a class="calc-tab" href="/cagr-calculator.html">CAGR</a>
+        <a class="calc-tab" href="/compound-interest-calculator.html">Compound Interest</a>
+        <a class="calc-tab" href="/simple-interest-calculator.html">Simple Interest</a>
+        <a class="calc-tab" href="/ppf-calculator.html">PPF</a>
+        <a class="calc-tab" href="/epf-calculator.html">EPF</a>
+        <a class="calc-tab" href="/nps-calculator.html">NPS</a>
+        <a class="calc-tab" href="/swp-calculator.html">SWP</a>
+        <a class="calc-tab" href="/fd-calculator.html">FD</a>
+        <a class="calc-tab" href="/rd-calculator.html">RD</a>
+        <a class="calc-tab" href="/income-tax-calculator.html">Income Tax</a>
+        <a class="calc-tab" href="/in-hand-salary-calculator.html">In-Hand Salary</a>
+        <a class="calc-tab" href="/hra-calculator.html">HRA Exemption</a>
+        <a class="calc-tab active" href="/gratuity-calculator.html">Gratuity</a>
+        <a class="calc-tab" href="/gst-calculator.html">GST</a>
+        <a class="calc-tab" href="/emi-calculator.html">Loan EMI</a>
+        <a class="calc-tab" href="/budget-planner.html">50/30/20 Budget</a>
+        <a class="calc-tab" href="/inflation-calculator.html">Inflation</a>
       </div>
+    </div>
 
-      <!-- Results Display (Pre-rendered default result) -->
-      <div style="background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Estimated Settlement</span>
-          <div id="result-total-gratuity" style="font-size: 2.4rem; font-weight: 800; color: var(--emerald); margin: 0.5rem 0 1rem;">₹1,84,615</div>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
-            Calculated as: <strong>₹40,000 × (15/26) × 8 years</strong>
-          </p>
+    <!-- Interactive Calculator Panel matching SIP Design -->
+    <div class="calc-main-container">
+      <div class="calc-grid" id="calculator-card">
+        <!-- Left: Inputs with Synchronized Sliders -->
+        <div class="calc-card">
+          <h2 style="font-size:1.35rem; font-weight:800; margin-bottom:24px; color:var(--text-primary);">Service & Wage Parameters</h2>
 
-          <hr style="border: 0; border-top: 1px solid var(--border-soft); margin: 1.25rem 0;">
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="coverage-type">Gratuity Act Coverage</label>
+            </div>
+            <select id="coverage-type" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--border-soft); border-radius: var(--radius-sm); font-size: 1rem; font-weight: 600; background: var(--bg-card); color: var(--text-primary);">
+              <option value="covered" selected>Covered under Gratuity Act (15/26 days)</option>
+              <option value="not_covered">Not covered under Gratuity Act (15/30 days)</option>
+              <option value="fixed_term">Fixed-Term Contract (Pro-rata, 1+ year)</option>
+            </select>
+          </div>
 
-          <div style="font-size: 0.95rem; line-height: 2;">
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Effective Tenure:</span>
-              <strong id="result-tenure">8 Years</strong>
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="monthly-wages-num">Last Drawn Monthly Basic + DA</label>
+              <div class="calc-input-box">
+                <span class="calc-input-prefix">₹</span>
+                <input aria-label="Monthly Basic Input" id="monthly-wages-num" max="1000000" min="5000" step="1000" type="number" value="40000"/>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Tax-Exempt Portion:</span>
-              <strong id="result-exempt" style="color: var(--emerald);">₹1,84,615</strong>
+            <input aria-label="Monthly Basic Slider" id="monthly-wages" max="500000" min="5000" step="1000" type="range" value="40000"/>
+            <small style="color: var(--text-muted); font-size: 0.82rem; margin-top: 4px; display: block;">Basic salary plus Dearness Allowance only. Excludes HRA, bonus, and allowances.</small>
+          </div>
+
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="service-years-num">Completed Years of Service</label>
+              <div class="calc-input-box">
+                <input aria-label="Completed Years Input" id="service-years-num" max="40" min="1" step="1" type="number" value="8"/>
+                <span class="calc-input-suffix">Yrs</span>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Taxable Portion:</span>
-              <strong id="result-taxable">₹0</strong>
+            <input aria-label="Completed Years Slider" id="service-years" max="40" min="1" step="1" type="range" value="8"/>
+          </div>
+
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="service-months-num">Additional Months in Final Year</label>
+              <div class="calc-input-box">
+                <input aria-label="Additional Months Input" id="service-months-num" max="11" min="0" step="1" type="number" value="0"/>
+                <span class="calc-input-suffix">Mos</span>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Statutory Exemption Cap:</span>
-              <span>₹20,00,000</span>
-            </div>
+            <input aria-label="Additional Months Slider" id="service-months" max="11" min="0" step="1" type="range" value="0"/>
+            <small style="color: var(--text-muted); font-size: 0.82rem; margin-top: 4px; display: block;">Under the Act, &gt; 6 months rounds up to 1 full additional year.</small>
           </div>
         </div>
 
-        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-soft); font-size: 0.82rem; color: var(--text-muted);">
-          Exemption under Section 10(10)(ii) applies up to ₹20 Lakh lifetime ceiling for private employees.
+        <!-- Right: Summary Results & Visuals -->
+        <div class="calc-summary-card">
+          <div>
+            <h3 style="font-size:1.2rem; font-weight:800; color:var(--text-primary); margin-bottom:18px;">Gratuity Entitlement</h3>
+            <div class="result-row">
+              <span class="result-label">Effective Service Tenure</span>
+              <span class="result-val" id="res-grat-tenure">8 Years</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Tax-Free Exemption (Sec 10(10))</span>
+              <span class="result-val" id="res-grat-exempt" style="color:#059669;">₹1,84,615</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Taxable Excess Gratuity</span>
+              <span class="result-val" id="res-grat-taxable">₹0</span>
+            </div>
+            <div class="result-row" style="padding-top:18px;">
+              <span class="result-label" style="font-weight:800; color:var(--text-primary);">Total Statutory Gratuity</span>
+              <span class="result-val highlight" id="res-grat-total">₹1,84,615</span>
+            </div>
+
+            <!-- SVG Visual Donut Ratio -->
+            <div style="margin:28px 0 12px; display:flex; align-items:center; justify-content:center; gap:28px;">
+              <svg aria-label="Gratuity Tax Exemption Ratio" class="donut" height="130" viewbox="0 0 42 42" width="130">
+                <circle class="donut-ring" cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#E2E8F0" stroke-width="5.5"></circle>
+                <circle cx="21" cy="21" fill="transparent" id="grat-donut-segment" r="15.91549430918954" stroke="#00D09C" stroke-dasharray="100 0" stroke-dashoffset="25" stroke-width="5.5"></circle>
+              </svg>
+              <div style="font-size:0.90rem; line-height:1.9;">
+                <div style="display:flex; align-items:center; gap:8px;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#00D09C;"></span> <span id="grat-donut-leg-exempt">Tax-Free: 100%</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#EF4444;"></span> <span id="grat-donut-leg-taxable">Taxable: 0%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="calc-result-disclaimer">
+            Statutory tax exemption ceiling under Section 10(10)(ii) is capped at ₹20,00,000 for private sector employees.
+          </div>
+          <p class="calc-estimate-note" style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-secondary); text-align:center;">Minimum 5 years of continuous service required for vesting (except death, disablement, or fixed-term contracts).</p>
+        </div>
+      </div>
+
+      <!-- Year-by-Year Gratuity Accumulation Schedule Table -->
+      <div style="margin-top:42px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-lg); padding:36px; box-shadow:var(--shadow-sm);">
+        <h3 style="font-size:1.35rem; font-weight:800; color:var(--text-primary); margin-bottom:8px;">Year-by-Year Gratuity Vesting &amp; Accumulation Schedule</h3>
+        <p style="font-size:0.96rem; color:var(--text-secondary); margin-bottom:20px;">Statutory accumulation progression tracking the 5-year vesting threshold and the ₹20 Lakh tax exemption ceiling.</p>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Service Year</th>
+                <th>Vesting Status</th>
+                <th>Annual Accrual</th>
+                <th>Cumulative Gratuity</th>
+                <th>Tax Treatment</th>
+              </tr>
+            </thead>
+            <tbody id="grat-schedule-tbody">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Deep Editorial Content matching SIP Layout -->
+      <div class="info-section-card" style="margin-top:42px;">
+        <h2 style="font-size:1.6rem; font-weight:800; color:var(--text-primary); margin-bottom:16px;">The Payment of Gratuity Act, 1972: Complete Indian Employee Guide</h2>
+        <p style="font-size:1.05rem; line-height:1.75; color:var(--text-secondary); margin-bottom:16px;">
+          Gratuity is a statutory monetary benefit provided by employers in India under the <em>Payment of Gratuity Act, 1972</em> to recognize an employee's continuous long-term service. It applies to all establishments, factories, mines, ports, oilfields, and commercial shops employing 10 or more persons on any day of the preceding 12 months.
+        </p>
+        <p style="font-size:1.05rem; line-height:1.75; color:var(--text-secondary); margin-bottom:20px;">
+          Once the Act applies to an employer, it continues to apply indefinitely even if the headcount later drops below 10.
+        </p>
+
+        <h3 style="font-size:1.3rem; font-weight:700; color:var(--text-primary); margin:28px 0 12px;">The 15/26 Statutory Calculation Formula</h3>
+        <p style="font-size:1rem; line-height:1.7; color:var(--text-secondary);">
+          The law considers 26 working days in a month (excluding four Sundays) and awards 15 days of wages for every completed year of service:
+        </p>
+        <div style="background:var(--bg-elevated); border-left:4px solid var(--emerald); padding:16px 20px; font-family:monospace; font-size:1.15rem; margin:16px 0; border-radius:4px;">
+          Gratuity = (Last Drawn Monthly Basic + DA) × (15 / 26) × Completed Years of Service
+        </div>
+        <p style="font-size:0.96rem; color:var(--text-secondary); line-height:1.7;">
+          <strong>Key Tenet:</strong> If an employee has worked for more than 6 months in their final year of tenure (e.g., 7 years and 7 months), the duration is statutorily rounded up to the next full year (8 years). If less than or equal to 6 months (e.g., 7 years and 4 months), it is rounded down (7 years).
+        </p>
+
+        <h3 style="font-size:1.3rem; font-weight:700; color:var(--text-primary); margin:28px 0 12px;">Covered vs Non-Covered Establishments</h3>
+        <div class="table-wrapper" style="margin:20px 0;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Covered under Gratuity Act</th>
+                <th>Not Covered under Gratuity Act</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700;">Formula</td>
+                <td>(Basic + DA) × (15 / 26) × Tenure</td>
+                <td>(Basic + DA) × (15 / 30) × Completed Years</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;">Fractional Year Rounding</td>
+                <td>More than 6 months rounds up to 1 full year</td>
+                <td>Only fully completed years counted (fractions ignored)</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;">Max Lifetime Exemption</td>
+                <td>₹20,00,000 (Section 10(10)(ii))</td>
+                <td>₹20,00,000 (Section 10(10)(iii))</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FAQ Section Accordion matching SIP page -->
+      <div class="info-section-card" style="margin-top:42px;">
+        <h2 style="font-size:1.5rem; font-weight:800; color:var(--text-primary); margin-bottom:24px;">Frequently Asked Questions About Gratuity</h2>
+        <div class="faq-list">
+          <details class="faq-item" style="border-bottom:1px solid var(--border-soft); padding:16px 0;">
+            <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--text-primary);">Is 5 years of service strictly mandatory to receive gratuity?</summary>
+            <p style="margin-top:10px; font-size:0.98rem; line-height:1.7; color:var(--text-secondary);">
+              For permanent salaried employees resigning or switching jobs, 5 years of continuous service is mandatory under Section 4(1). However, the 5-year condition is entirely waived if employment terminates due to death or permanent disablement. Furthermore, under recent labour reforms, Fixed-Term Employment (FTE) contracts are eligible for pro-rata gratuity upon completing 1 year.
+            </p>
+          </details>
+
+          <details class="faq-item" style="border-bottom:1px solid var(--border-soft); padding:16px 0;">
+            <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--text-primary);">Can an employer pay more than the ₹20 Lakh statutory gratuity limit?</summary>
+            <p style="margin-top:10px; font-size:0.98rem; line-height:1.7; color:var(--text-secondary);">
+              Yes. The ₹20 Lakh limit is a statutory minimum guarantee and tax exemption ceiling under Section 10(10). Employers are legally free to pay higher ex-gratia sums under corporate contractual policy. However, any amount exceeding ₹20,00,000 is added to your taxable income and taxed at your applicable income tax slab rates.
+            </p>
+          </details>
+
+          <details class="faq-item" style="border-bottom:1px solid var(--border-soft); padding:16px 0;">
+            <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--text-primary);">What components of salary are included in "Wages" for gratuity?</summary>
+            <p style="margin-top:10px; font-size:0.98rem; line-height:1.7; color:var(--text-secondary);">
+              Under Section 2(s) of the Act, "wages" strictly means Basic Pay and Dearness Allowance (DA). House Rent Allowance (HRA), Special Allowance, conveyance, medical reimbursements, annual performance bonuses, and overtime pay are strictly excluded from the calculation.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Thinking Framework -->
+      <div id="thinking-framework" style="margin-top:42px; background:var(--bg-elevated); border:1px solid var(--border-soft); border-radius:var(--radius-lg); padding:32px;">
+        <h3 style="font-size:1.3rem; font-weight:800; color:var(--text-primary); margin-bottom:12px;">Strategic Considerations Before Resigning</h3>
+        <p style="font-size:1rem; line-height:1.7; color:var(--text-secondary); margin-bottom:16px;">
+          Keep these practical points in mind before submitting your resignation:
+        </p>
+        <ol style="font-size:0.98rem; line-height:1.8; color:var(--text-secondary); margin-left:20px;">
+          <li><strong>The 4 Years and 240 Days Rule:</strong> In several landmark judicial rulings (e.g., Madras High Court in <em>M. Ramasamy vs Management</em>), working 240 days in the 5th year has been recognized as fulfilling the continuous 5-year requirement under Section 2A. However, to avoid litigation, completing 5 calendar years is safest.</li>
+          <li><strong>The 6 Months Rounding Advantage:</strong> Resigning at 7 years and 7 months yields 8 full years of gratuity calculation, earning you almost a full month's basic salary extra compared to resigning at 7 years and 5 months.</li>
+          <li><strong>Tax Exemption is Cumulative:</strong> The ₹20 Lakh tax exemption under Section 10(10) is a lifetime limit across all employers combined throughout your career.</li>
+        </ol>
+      </div>
+
+      <!-- Regulatory & Educational References -->
+      <div style="margin-top:42px; padding:24px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md);">
+        <h4 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin-bottom:10px;">Sources, Standards &amp; Regulatory References</h4>
+        <ul style="font-size:0.88rem; color:var(--text-secondary); line-height:1.7; list-style-type:disc; padding-left:20px;">
+          <li>Ministry of Labour and Employment, Government of India — Payment of Gratuity Act, 1972 (Act No. 39 of 1972).</li>
+          <li>Central Board of Direct Taxes (CBDT) — Notification on Exemption Limits under Section 10(10)(ii) of the Income-tax Act.</li>
+          <li>Payment of Gratuity (Central) Rules, 1972 and Form 'I' Notice of Claim.</li>
+        </ul>
+      </div>
+
+      <!-- Related Tools Grid -->
+      <div style="margin-top:42px;">
+        <h3 style="font-size:1.25rem; font-weight:800; color:var(--text-primary); margin-bottom:18px;">Related Calculators &amp; Salary Tools</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px;">
+          <a href="/in-hand-salary-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">In-Hand Salary Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Break down CTC into gross, deductions, EPF, and monthly net take-home pay.</div>
+          </a>
+          <a href="/epf-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">EPF Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Project your retirement Provident Fund balance with annual interest and hikes.</div>
+          </a>
+          <a href="/hra-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">HRA Exemption Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Calculate house rent allowance exemption under Section 10(13A).</div>
+          </a>
+          <a href="/income-tax-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">Income Tax Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Compare tax liability between New Regime (FY 2026-27) and Old Regime.</div>
+          </a>
         </div>
       </div>
     </div>
-
-    <!-- Long-Form Content & Worked Example -->
-    <article style="line-height: 1.75; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 3rem;">
-      <h2>How Gratuity Is Calculated: The Exact Statutory Formula</h2>
-      <p>
-        The Payment of Gratuity Act, 1972 establishes a statutory retirement benefit designed to reward employees for continuous service.
-        For employees covered by the Act, the law treats each working month as containing <strong>26 working days</strong> (excluding 4 Sundays), and provides 15 days of wages for every completed year:
-      </p>
-
-      <div style="background: var(--bg-elevated); border-left: 4px solid var(--emerald); padding: 1.25rem; margin: 1.5rem 0; font-family: monospace; font-size: 1.1rem;">
-        Gratuity = (Last Drawn Monthly Basic + DA) × (15 / 26) × Completed Years of Service
-      </div>
-
-      <h3>Worked Example (Illustration Only)</h3>
-      <p>
-        Suppose an employee draws a last monthly Basic Salary of ₹35,000 and Dearness Allowance of ₹5,000 (total ₹40,000) and separates after <strong>8 years and 7 months</strong> of continuous service:
-      </p>
-      <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-        <li>Because the additional service (7 months) exceeds 6 months, the tenure rounds up to <strong>9 years</strong>.</li>
-        <li>15 days of wages = ₹40,000 × (15 / 26) = ₹23,076.92</li>
-        <li>Total Gratuity = ₹23,076.92 × 9 = <strong>₹2,07,692</strong>.</li>
-        <li>Because ₹2,07,692 is below the ₹20,00,000 exemption cap, the entire amount is 100% tax-free.</li>
-      </ul>
-
-      <h2>Tax Exemption Rules Under Section 10(10)</h2>
-      <p>
-        Under the Income-tax Act, gratuity received upon retirement or separation is exempt up to the <strong>least of three amounts</strong>:
-      </p>
-      <ol style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-        <li>The actual gratuity amount received.</li>
-        <li>The statutory formula amount: (15 / 26) × Last Drawn Wages × Tenure.</li>
-        <li>The statutory monetary limit of <strong>₹20,00,000 (₹20 Lakh)</strong>.</li>
-      </ol>
-      <p>
-        For Central and State Government employees, gratuity is 100% tax-exempt without monetary limits under Section 10(10)(i).
-      </p>
-
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-top: 1.5rem;">
-        <details style="background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 6px; padding: 1rem; margin-bottom: 0.75rem;">
-          <summary style="font-weight: 700; cursor: pointer;">Is 5 years of service mandatory to receive gratuity?</summary>
-          <p style="margin-top: 0.75rem; font-size: 0.95rem; color: var(--text-secondary);">For permanent employees, 5 years of continuous service is mandatory under Section 4(1) of the Act. However, this condition is waived in the event of the employee's death or disablement due to accident or disease, or for fixed-term contract workers completing at least one year.</p>
-        </details>
-        <details style="background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 6px; padding: 1rem; margin-bottom: 0.75rem;">
-          <summary style="font-weight: 700; cursor: pointer;">Can an employer pay more than ₹20 Lakh gratuity?</summary>
-          <p style="margin-top: 0.75rem; font-size: 0.95rem; color: var(--text-secondary);">Yes. An employer can pay an ex-gratia amount higher than ₹20 Lakh based on contract or executive policy. However, the excess amount above ₹20 Lakh is subject to income tax at your applicable slab rates.</p>
-        </details>
-      </div>
-
-      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px;">
-        <h3 style="margin-top: 0; font-size: 1.15rem;">Official References & Legal Authority</h3>
-        <ul style="font-size: 0.92rem; line-height: 1.8; margin-bottom: 0;">
-          <li><strong>Ministry of Labour and Employment:</strong> <a href="https://labour.gov.in" target="_blank" rel="noopener noreferrer">Payment of Gratuity Act, 1972 &amp; Operational Rules</a>.</li>
-          <li><strong>Income Tax Department of India:</strong> <a href="https://incometaxindia.gov.in" target="_blank" rel="noopener noreferrer">Section 10(10) Gratuity Exemption Notification</a> (Last verified: October 2026).</li>
-          <li><strong>In-Depth Editorial Guide:</strong> Read our companion article <a href="/gratuity-calculation-tax-exemption-india.html" style="color: var(--emerald); text-decoration: underline; font-weight: 600;">Gratuity in India: Complete Rules &amp; Tax Guide</a>.</li>
-        </ul>
-      </div>
-    </article>
   </main>
 
-  <footer class="site-footer" style="background:#0F172A; color:#E2E8F0; padding:2.5rem 1.25rem; margin-top:3rem;">
-    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:2rem;">
-      <div>
-        <img src="logo-footer.svg" alt="Calculatorship" width="150" height="36" style="margin-bottom:1rem;">
-        <p style="font-size:0.88rem; color:#94A3B8; line-height:1.6;">Calculatorship is a free financial calculation platform maintained by Tejas, an engineering student in India.</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/"><img src="/logo-footer.svg" alt="Calculatorship — Free Financial Calculators for Indian Investors" width="200" height="36" style="display:block;" loading="lazy"></a>
+          <p class="footer-tagline">Independent financial calculators and educational guides explaining how money maths works for Indian salaried professionals and retail investors.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h3>Calculators</h3>
+            <ul>
+              <li><a href="/">SIP Calculator</a></li>
+              <li><a href="/lumpsum.html">Lumpsum Calculator</a></li>
+              <li><a href="/step-up.html">Step-Up SIP</a></li>
+              <li><a href="/cagr-calculator.html">CAGR Calculator</a></li>
+              <li><a href="/compound-interest-calculator.html">Compound Interest</a></li>
+              <li><a href="/ppf-calculator.html">PPF Calculator</a></li>
+              <li><a href="/epf-calculator.html">EPF Calculator</a></li>
+              <li><a href="/gratuity-calculator.html">Gratuity Calculator</a></li>
+              <li><a href="/income-tax-calculator.html">Tax Calculator</a></li>
+              <li><a href="/calculators.html" style="font-weight:700; color:var(--emerald);">Browse All 21 Tools &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Legal &amp; Policy</h3>
+            <ul>
+              <li><a href="/editorial-policy.html">Editorial Policy</a></li>
+              <li><a href="/corrections.html">Corrections Log</a></li>
+              <li><a href="/disclaimer.html">Disclaimer</a></li>
+              <li><a href="/terms.html">Terms of Use</a></li>
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/cookies.html">Cookie Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Platform</h3>
+            <ul>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="/blog.html">Blog &amp; Guides</a></li>
+              <li><a href="/sitemap.html">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Tools & Hubs</h3>
-        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
-          <li><a href="/calculators.html" style="color:#94A3B8; text-decoration:none;">All Calculators</a></li>
-          <li><a href="/gratuity-calculator.html" style="color:#94A3B8; text-decoration:none;">Gratuity Calculator</a></li>
-          <li><a href="/income-tax-calculator.html" style="color:#94A3B8; text-decoration:none;">Income Tax Calculator</a></li>
-          <li><a href="/ppf-calculator.html" style="color:#94A3B8; text-decoration:none;">PPF Calculator</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <div class="footer-disclaimer">
+          <strong>Educational Resource Notice:</strong> Calculatorship is an independent educational site run by a student. It is not registered with SEBI, AMFI, or RBI. Content and calculation tools are for educational awareness only and never constitute investment, tax, or legal advice. Mutual fund investments are subject to market risks. Real returns and tax rules vary. Check official notices and consult a qualified adviser before acting.
+        </div>
+        <div class="footer-copy">
+          &copy; 2026 Calculatorship. All rights reserved. | <a href="/disclaimer.html">Disclaimer</a> | <a href="/terms.html">Terms</a> | <a href="/privacy.html">Privacy</a>
+        </div>
       </div>
-      <div>
-        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Editorial & Transparency</h3>
-        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
-          <li><a href="/editorial-policy.html" style="color:#94A3B8; text-decoration:none;">Editorial Policy</a></li>
-          <li><a href="/corrections.html" style="color:#94A3B8; text-decoration:none;">Corrections Log</a></li>
-          <li><a href="/disclaimer.html" style="color:#94A3B8; text-decoration:none;">Disclaimer</a></li>
-          <li><a href="/contact.html" style="color:#94A3B8; text-decoration:none;">Contact & Feedback</a></li>
-        </ul>
-      </div>
-    </div>
-    <div style="max-width:1100px; margin:2rem auto 0; padding-top:1.5rem; border-top:1px solid #334155; text-align:center; font-size:0.82rem; color:#64748B;">
-      © 2026 Calculatorship.in. Non-commercial educational resource.
     </div>
   </footer>
 
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" stroke-width="2.5" fill="none" stroke="currentColor"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script src="theme.js?v=2.2"></script>
+
   <script>
     (function() {
-      const wagesInput = document.getElementById('monthly-wages');
-      const yearsInput = document.getElementById('service-years');
-      const monthsInput = document.getElementById('service-months');
-      const coverageSelect = document.getElementById('coverage-type');
-      const btn = document.getElementById('btn-recalculate');
+      function syncPair(numId, rangeId, callback) {
+        const num = document.getElementById(numId);
+        const range = document.getElementById(rangeId);
+        if (!num || !range) return;
 
-      function calculate() {
-        const wages = Math.max(0, parseFloat(wagesInput.value) || 0);
-        let years = Math.max(0, parseInt(yearsInput.value, 10) || 0);
-        const months = Math.max(0, parseInt(monthsInput.value, 10) || 0);
-        const coverage = coverageSelect.value;
+        num.addEventListener('input', () => {
+          range.value = num.value;
+          callback();
+        });
+        range.addEventListener('input', () => {
+          num.value = range.value;
+          callback();
+        });
+      }
+
+      function calculateGratuity() {
+        const wages = Math.max(0, parseFloat(document.getElementById('monthly-wages').value) || 0);
+        let years = Math.max(0, parseInt(document.getElementById('service-years').value, 10) || 0);
+        const months = Math.max(0, parseInt(document.getElementById('service-months').value, 10) || 0);
+        const coverage = document.getElementById('coverage-type').value;
 
         let effectiveYears = years;
         if (coverage === 'covered' || coverage === 'fixed_term') {
@@ -329,27 +555,70 @@
         }
 
         let gratuity = 0;
-        if (coverage === 'covered' || coverage === 'fixed_term') {
-          gratuity = Math.round((wages * 15 * effectiveYears) / 26);
-        } else {
-          gratuity = Math.round((wages * 15 * effectiveYears) / 30);
-        }
+        const divisor = (coverage === 'covered' || coverage === 'fixed_term') ? 26 : 30;
+        gratuity = Math.round((wages * 15 * effectiveYears) / divisor);
 
         const exemptCap = 2000000;
         const exempt = Math.min(gratuity, exemptCap);
         const taxable = Math.max(0, gratuity - exempt);
 
-        document.getElementById('result-total-gratuity').textContent = '₹' + gratuity.toLocaleString('en-IN');
-        document.getElementById('result-tenure').textContent = effectiveYears + ' Years' + (months > 6 ? ' (Rounded up)' : '');
-        document.getElementById('result-exempt').textContent = '₹' + exempt.toLocaleString('en-IN');
-        document.getElementById('result-taxable').textContent = '₹' + taxable.toLocaleString('en-IN');
+        document.getElementById('res-grat-total').textContent = '₹' + gratuity.toLocaleString('en-IN');
+        document.getElementById('res-grat-tenure').textContent = effectiveYears + ' Years' + (months > 6 ? ' (Rounded up)' : '');
+        document.getElementById('res-grat-exempt').textContent = '₹' + exempt.toLocaleString('en-IN');
+        document.getElementById('res-grat-taxable').textContent = '₹' + taxable.toLocaleString('en-IN');
+
+        // Donut Chart: Exempt vs Taxable
+        const exemptPercent = gratuity > 0 ? (exempt / gratuity) * 100 : 100;
+        const taxablePercent = 100 - exemptPercent;
+
+        const donutSegment = document.getElementById('grat-donut-segment');
+        if (donutSegment) {
+          const dashVal = Math.min(Math.max(exemptPercent, 0), 100);
+          donutSegment.setAttribute('stroke-dasharray', `${dashVal.toFixed(1)} ${(100 - dashVal).toFixed(1)}`);
+        }
+
+        const legExempt = document.getElementById('grat-donut-leg-exempt');
+        const legTaxable = document.getElementById('grat-donut-leg-taxable');
+        if (legExempt) legExempt.textContent = `Tax-Free: ${exemptPercent.toFixed(1)}%`;
+        if (legTaxable) legTaxable.textContent = `Taxable: ${taxablePercent.toFixed(1)}%`;
+
+        // Dynamic Schedule Table
+        const tbody = document.getElementById('grat-schedule-tbody');
+        if (tbody) {
+          let rowsHtml = '';
+          const maxTableYears = Math.max(effectiveYears, 10);
+          const annualFactor = (wages * 15) / divisor;
+
+          for (let yr = 1; yr <= Math.min(maxTableYears, 35); yr++) {
+            const cumVal = Math.round(annualFactor * yr);
+            const isVested = (coverage === 'fixed_term' ? yr >= 1 : yr >= 5);
+            const vestingBadge = isVested 
+              ? '<span style="color:#059669; font-weight:700;">Vested ✓</span>' 
+              : '<span style="color:#D97706; font-weight:600;">Unvested (&lt; 5 Yrs)</span>';
+            const taxBadge = cumVal <= exemptCap 
+              ? '<span style="color:#059669;">100% Tax-Exempt</span>' 
+              : `<span style="color:#DC2626;">Taxable excess of ₹${(cumVal - exemptCap).toLocaleString('en-IN')}</span>`;
+
+            rowsHtml += `
+              <tr ${yr === effectiveYears ? 'style="background:rgba(0,208,156,0.08); font-weight:bold;"' : ''}>
+                <td>Year ${yr} ${yr === effectiveYears ? '(Your Tenure)' : ''}</td>
+                <td>${vestingBadge}</td>
+                <td style="color:#059669;">+₹${Math.round(annualFactor).toLocaleString('en-IN')}</td>
+                <td style="font-weight:700;">₹${cumVal.toLocaleString('en-IN')}</td>
+                <td>${taxBadge}</td>
+              </tr>
+            `;
+          }
+          tbody.innerHTML = rowsHtml;
+        }
       }
 
-      btn.addEventListener('click', calculate);
-      [wagesInput, yearsInput, monthsInput, coverageSelect].forEach(el => {
-        el.addEventListener('input', calculate);
-        el.addEventListener('change', calculate);
-      });
+      syncPair('monthly-wages-num', 'monthly-wages', calculateGratuity);
+      syncPair('service-years-num', 'service-years', calculateGratuity);
+      syncPair('service-months-num', 'service-months', calculateGratuity);
+      document.getElementById('coverage-type').addEventListener('change', calculateGratuity);
+
+      calculateGratuity();
     })();
   </script>
 </body>

@@ -54,15 +54,64 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="site-logo" aria-label="Calculatorship Home">
-        <img src="logo-light.svg" alt="Calculatorship Logo" width="160" height="38">
+      <a href="/" class="brand" aria-label="Calculatorship Homepage">
+        <img src="/logo-light.svg" alt="Calculatorship — Free Financial Calculators for Indian Investors" width="220" height="38" loading="lazy">
       </a>
-      <nav class="site-nav" aria-label="Main Navigation">
-        <a href="/calculators.html" class="active">Calculators</a>
-        <a href="/blog.html">Guides</a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="/calculators.html" class="nav-dropdown-toggle">Calculators</a>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-dropdown-grid">
+              <div class="nav-dropdown-group">
+                <div class="nav-dropdown-group-title">Investing</div>
+                <ul class="nav-dropdown-group-list">
+                  <li><a href="/">SIP Calculator</a></li>
+                  <li><a href="/lumpsum.html">Lumpsum</a></li>
+                  <li><a href="/step-up.html">Step-Up SIP</a></li>
+                  <li><a href="/cagr-calculator.html">CAGR Calculator</a></li>
+                  <li><a href="/compound-interest-calculator.html">Compound Interest</a></li>
+                  <li><a href="/simple-interest-calculator.html">Simple Interest</a></li>
+                </ul>
+              </div>
+              <div class="nav-dropdown-group">
+                <div class="nav-dropdown-group-title">Retirement &amp; Banking</div>
+                <ul class="nav-dropdown-group-list">
+                  <li><a href="/ppf-calculator.html">PPF Calculator</a></li>
+                  <li><a href="/epf-calculator.html">EPF Calculator</a></li>
+                  <li><a href="/nps-calculator.html">NPS Calculator</a></li>
+                  <li><a href="/swp-calculator.html">SWP Calculator</a></li>
+                  <li><a href="/fd-calculator.html">FD Calculator</a></li>
+                  <li><a href="/rd-calculator.html">RD Calculator</a></li>
+                </ul>
+              </div>
+              <div class="nav-dropdown-group">
+                <div class="nav-dropdown-group-title">Tax, Salary &amp; Loans</div>
+                <ul class="nav-dropdown-group-list">
+                  <li><a href="/income-tax-calculator.html">Income Tax (FY 26-27)</a></li>
+                  <li><a href="/in-hand-salary-calculator.html">In-Hand Salary</a></li>
+                  <li><a href="/hra-calculator.html">HRA Exemption</a></li>
+                  <li><a href="/gratuity-calculator.html">Gratuity (15/26)</a></li>
+                  <li><a href="/gst-calculator.html">GST Calculator</a></li>
+                  <li><a href="/emi-calculator.html">Loan EMI &amp; Prepay</a></li>
+                  <li><a href="/budget-planner.html">50/30/20 Budget</a></li>
+                  <li><a href="/inflation-calculator.html">Inflation Planner</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-dropdown-footer">
+              <a href="/calculators.html">Browse All 21 Calculators Directory &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <a href="/blog.html">Blog &amp; Guides</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
       </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -91,155 +140,379 @@
       </p>
     </div>
 
-    <!-- Calculator Panel -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem; background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 2rem;">
-      <div>
-        <h2 style="font-size: 1.3rem; color: var(--text-primary); margin-top: 0; margin-bottom: 1.5rem;">NPS Contribution Details</h2>
-        
-        <div style="margin-bottom: 1.25rem;">
-          <label for="nps-monthly" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Monthly Contribution (₹)</label>
-          <input type="number" id="nps-monthly" value="5000" min="500" max="1000000" step="500" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-        </div>
-
-        <div style="margin-bottom: 1.25rem;">
-          <label for="nps-current-age" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Your Current Age (Years)</label>
-          <input type="number" id="nps-current-age" value="30" min="18" max="65" step="1" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-        </div>
-
-        <div style="margin-bottom: 1.25rem;">
-          <label for="nps-rate" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Expected Return on Investment (CAGR %)</label>
-          <input type="number" id="nps-rate" value="10.0" min="5" max="18" step="0.5" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-        </div>
-
-        <div style="margin-bottom: 1.25rem;">
-          <label for="nps-annuity-pct" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Annuity Reinvestment (Min 40% under PFRDA)</label>
-          <input type="number" id="nps-annuity-pct" value="40" min="40" max="100" step="5" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-        </div>
-
-        <div style="margin-bottom: 1.5rem;">
-          <label for="nps-annuity-rate" style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Expected Annuity Rate (% p.a.)</label>
-          <input type="number" id="nps-annuity-rate" value="6.0" min="4" max="10" step="0.5" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-medium); border-radius: 6px; font-size: 1rem;">
-        </div>
-
-        <button type="button" id="btn-calc-nps" style="width: 100%; padding: 0.85rem; background: var(--emerald); color: #fff; border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer;">Calculate Retirement Corpus</button>
+    <div class="calc-switcher-wrapper" style="margin-bottom: 24px;">
+      <div class="calc-switcher-bar">
+        <a class="calc-tab" href="/">SIP Calculator</a>
+        <a class="calc-tab" href="/lumpsum.html">Lumpsum</a>
+        <a class="calc-tab" href="/step-up.html">Step-Up SIP</a>
+        <a class="calc-tab" href="/cagr-calculator.html">CAGR</a>
+        <a class="calc-tab" href="/compound-interest-calculator.html">Compound Interest</a>
+        <a class="calc-tab" href="/simple-interest-calculator.html">Simple Interest</a>
+        <a class="calc-tab" href="/ppf-calculator.html">PPF</a>
+        <a class="calc-tab" href="/epf-calculator.html">EPF</a>
+        <a class="calc-tab active" href="/nps-calculator.html">NPS</a>
+        <a class="calc-tab" href="/swp-calculator.html">SWP</a>
+        <a class="calc-tab" href="/fd-calculator.html">FD</a>
+        <a class="calc-tab" href="/rd-calculator.html">RD</a>
+        <a class="calc-tab" href="/income-tax-calculator.html">Income Tax</a>
+        <a class="calc-tab" href="/in-hand-salary-calculator.html">In-Hand Salary</a>
+        <a class="calc-tab" href="/hra-calculator.html">HRA Exemption</a>
+        <a class="calc-tab" href="/gratuity-calculator.html">Gratuity</a>
+        <a class="calc-tab" href="/gst-calculator.html">GST</a>
+        <a class="calc-tab" href="/emi-calculator.html">Loan EMI</a>
+        <a class="calc-tab" href="/budget-planner.html">50/30/20 Budget</a>
+        <a class="calc-tab" href="/inflation-calculator.html">Inflation</a>
       </div>
+    </div>
 
-      <!-- Result Card -->
-      <div style="background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Total Corpus at Age 60</span>
-          <div id="result-nps-corpus" style="font-size: 2.3rem; font-weight: 800; color: var(--emerald); margin: 0.5rem 0 1rem;">₹1,13,96,627</div>
+    <!-- Interactive Calculator Panel matching SIP Design -->
+    <div class="calc-main-container">
+      <div class="calc-grid" id="calculator-card">
+        <!-- Left: Inputs with Synchronized Sliders -->
+        <div class="calc-card">
+          <h2 style="font-size:1.35rem; font-weight:800; margin-bottom:24px; color:var(--text-primary);">NPS Contribution Parameters</h2>
 
-          <hr style="border: 0; border-top: 1px solid var(--border-soft); margin: 1.25rem 0;">
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="nps-monthly-num">Monthly Contribution Amount</label>
+              <div class="calc-input-box">
+                <span class="calc-input-prefix">₹</span>
+                <input aria-label="Monthly Contribution Input" id="nps-monthly-num" max="150000" min="500" step="500" type="number" value="5000"/>
+              </div>
+            </div>
+            <input aria-label="Monthly Contribution Slider" id="nps-monthly" max="100000" min="500" step="500" type="range" value="5000"/>
+          </div>
 
-          <div style="font-size: 0.95rem; line-height: 2;">
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Total Invested (30 yrs):</span>
-              <strong id="result-nps-invested">₹18,00,000</strong>
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="nps-current-age-num">Current Age (Years)</label>
+              <div class="calc-input-box">
+                <input aria-label="Current Age Input" id="nps-current-age-num" max="59" min="18" step="1" type="number" value="30"/>
+                <span class="calc-input-suffix">Yrs</span>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Total Growth Gained:</span>
-              <strong id="result-nps-gain" style="color: var(--emerald);">₹95,96,627</strong>
+            <input aria-label="Current Age Slider" id="nps-current-age" max="59" min="18" step="1" type="range" value="30"/>
+            <small style="color: var(--text-muted); font-size: 0.82rem; margin-top: 4px; display: block;">NPS tenure runs until statutory superannuation at age 60.</small>
+          </div>
+
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="nps-rate-num">Expected Investment Return (CAGR)</label>
+              <div class="calc-input-box">
+                <input aria-label="Expected Return Input" id="nps-rate-num" max="15" min="6" step="0.5" type="number" value="10.0"/>
+                <span class="calc-input-suffix">%</span>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Tax-Free Lump Sum (60%):</span>
-              <strong id="result-nps-lump">₹68,37,976</strong>
+            <input aria-label="Expected Return Slider" id="nps-rate" max="15" min="6" step="0.5" type="range" value="10.0"/>
+          </div>
+
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="nps-annuity-pct-num">Annuity Reinvestment (Min 40%)</label>
+              <div class="calc-input-box">
+                <input aria-label="Annuity Percentage Input" id="nps-annuity-pct-num" max="100" min="40" step="5" type="number" value="40"/>
+                <span class="calc-input-suffix">%</span>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <span style="color: var(--text-muted);">Annuity Corpus (40%):</span>
-              <strong id="result-nps-annuity-corpus">₹45,58,651</strong>
+            <input aria-label="Annuity Percentage Slider" id="nps-annuity-pct" max="100" min="40" step="5" type="range" value="40"/>
+          </div>
+
+          <div class="calc-field-group">
+            <div class="calc-field-header">
+              <label for="nps-annuity-rate-num">Expected Annuity Interest Rate</label>
+              <div class="calc-input-box">
+                <input aria-label="Annuity Rate Input" id="nps-annuity-rate-num" max="9" min="4" step="0.5" type="number" value="6.0"/>
+                <span class="calc-input-suffix">%</span>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 1px dashed var(--border-soft);">
-              <span style="color: var(--text-primary); font-weight: 700;">Monthly Pension:</span>
-              <strong id="result-nps-pension" style="color: var(--emerald); font-size: 1.15rem;">₹22,793 / mo</strong>
-            </div>
+            <input aria-label="Annuity Rate Slider" id="nps-annuity-rate" max="9" min="4" step="0.5" type="range" value="6.0"/>
           </div>
         </div>
 
-        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-soft); font-size: 0.82rem; color: var(--text-muted);">
-          60% lump-sum withdrawal is 100% tax-free under Section 10(12A). Annuity pension is taxable at slab rates upon receipt.
+        <!-- Right: Summary Results & Visuals -->
+        <div class="calc-summary-card">
+          <div>
+            <h3 style="font-size:1.2rem; font-weight:800; color:var(--text-primary); margin-bottom:18px;">Retirement Corpus at Age 60</h3>
+            <div class="result-row">
+              <span class="result-label">Total Out-of-Pocket Invested</span>
+              <span class="result-val" id="res-nps-invested">₹18,00,000</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Total Compounded Wealth Gained</span>
+              <span class="result-val" id="res-nps-gain" style="color:#059669;">₹95,96,627</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Tax-Free Lump Sum (60%)</span>
+              <span class="result-val" id="res-nps-lump" style="color:#059669;">₹68,37,976</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Annuity Reinvestment (40%)</span>
+              <span class="result-val" id="res-nps-annuity-corpus">₹45,58,651</span>
+            </div>
+            <div class="result-row" style="padding-top:12px; border-top:1px dashed var(--border-soft); margin-top:8px;">
+              <span class="result-label" style="font-weight:700; color:var(--text-primary);">Estimated Monthly Lifelong Pension</span>
+              <span class="result-val highlight" id="res-nps-pension">₹22,793 / mo</span>
+            </div>
+            <div class="result-row" style="padding-top:16px;">
+              <span class="result-label" style="font-weight:800; color:var(--text-primary);">Total Terminal NPS Corpus</span>
+              <span class="result-val highlight" id="res-nps-corpus">₹1,13,96,627</span>
+            </div>
+
+            <!-- SVG Visual Donut Ratio -->
+            <div style="margin:28px 0 12px; display:flex; align-items:center; justify-content:center; gap:28px;">
+              <svg aria-label="NPS Lump Sum vs Annuity Ratio" class="donut" height="130" viewbox="0 0 42 42" width="130">
+                <circle class="donut-ring" cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#E2E8F0" stroke-width="5.5"></circle>
+                <circle cx="21" cy="21" fill="transparent" id="nps-donut-segment" r="15.91549430918954" stroke="#00D09C" stroke-dasharray="60 40" stroke-dashoffset="25" stroke-width="5.5"></circle>
+              </svg>
+              <div style="font-size:0.90rem; line-height:1.9;">
+                <div style="display:flex; align-items:center; gap:8px;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#00D09C;"></span> <span id="nps-donut-leg-lump">Tax-Free Lump: 60%</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#6366F1;"></span> <span id="nps-donut-leg-annuity">Annuity Pension: 40%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="calc-result-disclaimer">
+            60% lump sum is 100% tax-free under Section 10(12A). Monthly annuity pension is taxed at slab rates upon receipt.
+          </div>
+          <p class="calc-estimate-note" style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-secondary); text-align:center;">Assumes disciplined monthly investment until age 60 with regular annuity yields.</p>
+        </div>
+      </div>
+
+      <!-- Year-by-Year NPS Progression Schedule Table -->
+      <div style="margin-top:42px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-lg); padding:36px; box-shadow:var(--shadow-sm);">
+        <h3 style="font-size:1.35rem; font-weight:800; color:var(--text-primary); margin-bottom:8px;">Year-by-Year NPS Wealth Accumulation Schedule</h3>
+        <p style="font-size:0.96rem; color:var(--text-secondary); margin-bottom:20px;">Detailed simulation of cumulative contributions, market returns, and terminal pension projection until age 60.</p>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Age</th>
+                <th>Year</th>
+                <th>Cumulative Invested</th>
+                <th>Cumulative Wealth Gains</th>
+                <th>Closing NPS Corpus</th>
+              </tr>
+            </thead>
+            <tbody id="nps-schedule-tbody">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Deep Editorial Content matching SIP Layout -->
+      <div class="info-section-card" style="margin-top:42px;">
+        <h2 style="font-size:1.6rem; font-weight:800; color:var(--text-primary); margin-bottom:16px;">The National Pension System (NPS): Complete Indian Investor Guide</h2>
+        <p style="font-size:1.05rem; line-height:1.75; color:var(--text-secondary); margin-bottom:16px;">
+          The National Pension System (NPS) is a voluntary, long-term retirement savings scheme regulated by the Pension Fund Regulatory and Development Authority (PFRDA) under the Government of India. With fund management charges capped at under 0.09% per annum, NPS is one of the world's most cost-effective retirement accumulation tools.
+        </p>
+        <p style="font-size:1.05rem; line-height:1.75; color:var(--text-secondary); margin-bottom:20px;">
+          Any Indian citizen aged between 18 and 70 years can open an NPS Tier-1 account and allocate savings across Equity (E), Corporate Bonds (C), Government Securities (G), and Alternative Assets (A) through Auto Choice (Lifecycle Fund) or Active Choice.
+        </p>
+
+        <h3 style="font-size:1.3rem; font-weight:700; color:var(--text-primary); margin:28px 0 12px;">PFRDA Superannuation &amp; Exit Mandates</h3>
+        <p style="font-size:1rem; line-height:1.7; color:var(--text-secondary);">
+          Upon reaching the superannuation age of 60:
+        </p>
+        <ul style="font-size:0.98rem; line-height:1.8; color:var(--text-secondary); margin-left:20px; margin-bottom:20px;">
+          <li><strong>60% Tax-Free Lump Sum:</strong> You can withdraw up to 60% of the accumulated corpus completely tax-free under Section 10(12A) of the Income-tax Act.</li>
+          <li><strong>Mandatory 40% Annuity:</strong> You must allocate at least 40% of the corpus to purchase an annuity from an approved Life Insurance company (like LIC, HDFC Life, SBI Life) providing a guaranteed monthly pension for life.</li>
+          <li><strong>Small Corpus Exemption:</strong> If your total accumulated corpus is ₹5,00,000 or less, PFRDA permits a 100% lump-sum withdrawal without purchasing an annuity.</li>
+        </ul>
+
+        <h3 style="font-size:1.3rem; font-weight:700; color:var(--text-primary); margin:28px 0 12px;">Tax Deductions Under Old vs New Regime</h3>
+        <div class="table-wrapper" style="margin:20px 0;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Section</th>
+                <th>Eligibility</th>
+                <th>Max Limit</th>
+                <th>Allowed in New Tax Regime?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700;">Section 80CCD(1)</td>
+                <td>Individual employee contribution</td>
+                <td>Within ₹1.5 Lakh 80C umbrella</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;">Section 80CCD(1B)</td>
+                <td>Exclusive voluntary contribution</td>
+                <td>Additional ₹50,000</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;">Section 80CCD(2)</td>
+                <td>Employer contribution on behalf of employee</td>
+                <td>Up to 14% of Basic + DA (Govt) / 10% (Private)</td>
+                <td><strong style="color:#059669;">Yes! (Valid in New Regime)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FAQ Section Accordion matching SIP page -->
+      <div class="info-section-card" style="margin-top:42px;">
+        <h2 style="font-size:1.5rem; font-weight:800; color:var(--text-primary); margin-bottom:24px;">Frequently Asked Questions About NPS</h2>
+        <div class="faq-list">
+          <details class="faq-item" style="border-bottom:1px solid var(--border-soft); padding:16px 0;">
+            <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--text-primary);">Is the monthly annuity pension from NPS taxable?</summary>
+            <p style="margin-top:10px; font-size:0.98rem; line-height:1.7; color:var(--text-secondary);">
+              Yes. While the 60% lump-sum withdrawal is 100% tax-free under Section 10(12A), the monthly pension received from the remaining 40% annuity is treated as income and taxed at your applicable income tax slab rates in the financial year of receipt.
+            </p>
+          </details>
+
+          <details class="faq-item" style="border-bottom:1px solid var(--border-soft); padding:16px 0;">
+            <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--text-primary);">Can I choose 100% equity allocation in NPS?</summary>
+            <p style="margin-top:10px; font-size:0.98rem; line-height:1.7; color:var(--text-secondary);">
+              Under current PFRDA rules for private sector citizens, the maximum equity allocation (Asset Class E) under Active Choice is capped at 75% up to age 50, after which it automatically tapers down by 2.5% each year until it stabilizes at 50% at age 60 to protect the corpus from market drawdowns.
+            </p>
+          </details>
+
+          <details class="faq-item" style="border-bottom:1px solid var(--border-soft); padding:16px 0;">
+            <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--text-primary);">What is the difference between Tier-1 and Tier-2 NPS accounts?</summary>
+            <p style="margin-top:10px; font-size:0.98rem; line-height:1.7; color:var(--text-secondary);">
+              Tier-1 is the primary, non-withdrawable retirement pension account that qualifies for tax deductions with lock-in until age 60. Tier-2 is an optional voluntary investment account with unrestricted liquidity where you can deposit and withdraw at any time, but contributions carry no tax deductions.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Thinking Framework -->
+      <div id="thinking-framework" style="margin-top:42px; background:var(--bg-elevated); border:1px solid var(--border-soft); border-radius:var(--radius-lg); padding:32px;">
+        <h3 style="font-size:1.3rem; font-weight:800; color:var(--text-primary); margin-bottom:12px;">Strategic Retirement Portfolio Rule</h3>
+        <p style="font-size:1rem; line-height:1.7; color:var(--text-secondary); margin-bottom:16px;">
+          To build an inflation-proof retirement nest egg in India:
+        </p>
+        <ol style="font-size:0.98rem; line-height:1.8; color:var(--text-secondary); margin-left:20px;">
+          <li><strong>Leverage Section 80CCD(2) Corporate NPS:</strong> Ask your employer to route 10% of your Basic Wage directly into NPS. This deduction directly reduces your taxable income even under the New Tax Regime.</li>
+          <li><strong>Combine NPS with Equity Mutual Funds:</strong> While NPS locks in 40% into mandatory annuities, maintaining parallel diversified mutual fund SIPs provides unrestricted liquidity at retirement.</li>
+          <li><strong>Choose Active Choice (75% Equity) in Your 20s and 30s:</strong> Young professionals with a 25-30 year horizon should maximize equity exposure to benefit from compounding equity risk premia.</li>
+        </ol>
+      </div>
+
+      <!-- Regulatory & Educational References -->
+      <div style="margin-top:42px; padding:24px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md);">
+        <h4 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin-bottom:10px;">Sources, Standards &amp; Regulatory References</h4>
+        <ul style="font-size:0.88rem; color:var(--text-secondary); line-height:1.7; list-style-type:disc; padding-left:20px;">
+          <li>Pension Fund Regulatory and Development Authority (PFRDA) — Exit &amp; Annuity Regulations.</li>
+          <li>National Pension System Trust (NPS Trust) — Annual Scheme Performance and Fee Architecture.</li>
+          <li>Income Tax Department, Government of India — Sections 80CCD(1), 80CCD(1B), 80CCD(2) &amp; 10(12A).</li>
+        </ul>
+      </div>
+
+      <!-- Related Tools Grid -->
+      <div style="margin-top:42px;">
+        <h3 style="font-size:1.25rem; font-weight:800; color:var(--text-primary); margin-bottom:18px;">Related Calculators &amp; Retirement Tools</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px;">
+          <a href="/epf-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">EPF Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Project your statutory Employees' Provident Fund balance with annual hikes.</div>
+          </a>
+          <a href="/swp-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">SWP Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Simulate tax-efficient monthly retirement cash flows from mutual funds.</div>
+          </a>
+          <a href="/ppf-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">PPF Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Calculate 15-year tax-free government guaranteed Public Provident Fund returns.</div>
+          </a>
+          <a href="/inflation-calculator.html" style="display:block; padding:18px; background:var(--bg-card); border:1px solid var(--border-soft); border-radius:var(--radius-md); text-decoration:none; color:inherit; transition:border-color 0.2s;">
+            <div style="font-weight:700; color:var(--emerald-dark); margin-bottom:6px;">Inflation Calculator &rarr;</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary);">Project future cost of living in retirement based on Indian retail inflation.</div>
+          </a>
         </div>
       </div>
     </div>
-
-    <!-- Long-form content -->
-    <article style="line-height: 1.75; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 3rem;">
-      <h2>PFRDA Exit Rules and Annuity Mandates</h2>
-      <p>
-        The National Pension System (NPS), governed by the Pension Fund Regulatory and Development Authority (PFRDA), is a low-cost, government-backed retirement planning vehicle.
-        Upon reaching the superannuation age of 60:
-      </p>
-      <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-        <li><strong>Lump-Sum Withdrawal:</strong> You can withdraw up to <strong>60% of the accumulated corpus</strong> as a 100% tax-free lump sum under Section 10(12A).</li>
-        <li><strong>Mandatory Annuity:</strong> You must purchase an annuity from an approved Life Insurance Service Provider with at least <strong>40% of the corpus</strong>. The annuity provides a lifelong monthly pension.</li>
-        <li><strong>Small Corpus Rule:</strong> If your total accumulated corpus is ₹5 Lakh or less, you are permitted to withdraw 100% of the corpus as a lump sum without purchasing an annuity.</li>
-      </ul>
-
-      <h2>Tax Deduction Privileges (Old vs New Regime)</h2>
-      <p>
-        NPS Tier-1 contributions offer unique triple-tax benefits under the Indian Income-tax Act:
-      </p>
-      <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-        <li><strong>Section 80CCD(1):</strong> Employee contribution up to 10% of salary (or 20% of gross income for self-employed), within the overall ₹1.5 Lakh ceiling of Section 80C.</li>
-        <li><strong>Section 80CCD(1B):</strong> An exclusive additional deduction of <strong>₹50,000</strong> over and above the Section 80C ceiling (available under the Old Tax Regime).</li>
-        <li><strong>Section 80CCD(2):</strong> Employer's contribution up to 14% of salary for Central Government employees (10% for private sector). Notably, this deduction remains available under <strong>both the Old and New Tax Regimes</strong>.</li>
-      </ul>
-
-      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 8px;">
-        <h3 style="margin-top: 0; font-size: 1.15rem;">Statutory References & Detailed Guides</h3>
-        <ul style="font-size: 0.92rem; line-height: 1.8; margin-bottom: 0;">
-          <li><strong>PFRDA Portal:</strong> <a href="https://www.pfrda.org.in" target="_blank" rel="noopener noreferrer">pfrda.org.in — Exit Regulations & Master Circulars</a>.</li>
-          <li><strong>In-Depth Editorial Guide:</strong> Read our comprehensive <a href="/nps-guide.html" style="color: var(--emerald); text-decoration: underline; font-weight: 600;">Complete NPS Tier-1 & Tier-2 Guide</a>.</li>
-        </ul>
-      </div>
-    </article>
   </main>
 
-  <footer class="site-footer" style="background:#0F172A; color:#E2E8F0; padding:2.5rem 1.25rem; margin-top:3rem;">
-    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:2rem;">
-      <div>
-        <img src="logo-footer.svg" alt="Calculatorship" width="150" height="36" style="margin-bottom:1rem;">
-        <p style="font-size:0.88rem; color:#94A3B8; line-height:1.6;">Calculatorship is a free financial calculation platform maintained by Tejas, an engineering student in India.</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/"><img src="/logo-footer.svg" alt="Calculatorship — Free Financial Calculators for Indian Investors" width="200" height="36" style="display:block;" loading="lazy"></a>
+          <p class="footer-tagline">Independent financial calculators and educational guides explaining how money maths works for Indian salaried professionals and retail investors.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h3>Calculators</h3>
+            <ul>
+              <li><a href="/">SIP Calculator</a></li>
+              <li><a href="/lumpsum.html">Lumpsum Calculator</a></li>
+              <li><a href="/step-up.html">Step-Up SIP</a></li>
+              <li><a href="/cagr-calculator.html">CAGR Calculator</a></li>
+              <li><a href="/compound-interest-calculator.html">Compound Interest</a></li>
+              <li><a href="/ppf-calculator.html">PPF Calculator</a></li>
+              <li><a href="/epf-calculator.html">EPF Calculator</a></li>
+              <li><a href="/nps-calculator.html">NPS Calculator</a></li>
+              <li><a href="/fd-calculator.html">FD Calculator</a></li>
+              <li><a href="/rd-calculator.html">RD Calculator</a></li>
+              <li><a href="/calculators.html" style="font-weight:700; color:var(--emerald);">Browse All 21 Tools &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Legal &amp; Policy</h3>
+            <ul>
+              <li><a href="/editorial-policy.html">Editorial Policy</a></li>
+              <li><a href="/corrections.html">Corrections Log</a></li>
+              <li><a href="/disclaimer.html">Disclaimer</a></li>
+              <li><a href="/terms.html">Terms of Use</a></li>
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/cookies.html">Cookie Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Platform</h3>
+            <ul>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="/blog.html">Blog &amp; Guides</a></li>
+              <li><a href="/sitemap.html">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Tools & Hubs</h3>
-        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
-          <li><a href="/calculators.html" style="color:#94A3B8; text-decoration:none;">All Calculators</a></li>
-          <li><a href="/nps-calculator.html" style="color:#94A3B8; text-decoration:none;">NPS Calculator</a></li>
-          <li><a href="/ppf-calculator.html" style="color:#94A3B8; text-decoration:none;">PPF Calculator</a></li>
-          <li><a href="/swp-calculator.html" style="color:#94A3B8; text-decoration:none;">SWP Pension Simulator</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <div class="footer-disclaimer">
+          <strong>Educational Resource Notice:</strong> Calculatorship is an independent educational site run by a student. It is not registered with SEBI, AMFI, or RBI. Content and calculation tools are for educational awareness only and never constitute investment, tax, or legal advice. Mutual fund investments are subject to market risks. Real returns and tax rules vary. Check official notices and consult a qualified adviser before acting.
+        </div>
+        <div class="footer-copy">
+          &copy; 2026 Calculatorship. All rights reserved. | <a href="/disclaimer.html">Disclaimer</a> | <a href="/terms.html">Terms</a> | <a href="/privacy.html">Privacy</a>
+        </div>
       </div>
-      <div>
-        <h3 style="font-size:0.95rem; font-weight:700; color:#F8FAFC; margin-bottom:0.75rem;">Editorial & Transparency</h3>
-        <ul style="list-style:none; padding:0; line-height:2; font-size:0.9rem;">
-          <li><a href="/editorial-policy.html" style="color:#94A3B8; text-decoration:none;">Editorial Policy</a></li>
-          <li><a href="/corrections.html" style="color:#94A3B8; text-decoration:none;">Corrections Log</a></li>
-          <li><a href="/disclaimer.html" style="color:#94A3B8; text-decoration:none;">Disclaimer</a></li>
-          <li><a href="/contact.html" style="color:#94A3B8; text-decoration:none;">Contact & Feedback</a></li>
-        </ul>
-      </div>
-    </div>
-    <div style="max-width:1100px; margin:2rem auto 0; padding-top:1.5rem; border-top:1px solid #334155; text-align:center; font-size:0.82rem; color:#64748B;">
-      © 2026 Calculatorship.in. Non-commercial educational resource.
     </div>
   </footer>
 
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" stroke-width="2.5" fill="none" stroke="currentColor"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script src="theme.js?v=2.2"></script>
+
   <script>
     (function() {
-      const mInput = document.getElementById('nps-monthly');
-      const ageInput = document.getElementById('nps-current-age');
-      const rateInput = document.getElementById('nps-rate');
-      const annuityPctInput = document.getElementById('nps-annuity-pct');
-      const annuityRateInput = document.getElementById('nps-annuity-rate');
-      const btn = document.getElementById('btn-calc-nps');
+      function syncPair(numId, rangeId, cb) {
+        const num = document.getElementById(numId);
+        const range = document.getElementById(rangeId);
+        if (!num || !range) return;
+        num.addEventListener('input', () => {
+          range.value = num.value;
+          cb();
+        });
+        range.addEventListener('input', () => {
+          num.value = range.value;
+          cb();
+        });
+      }
 
-      function calculate() {
-        const P = Math.max(0, parseFloat(mInput.value) || 0);
-        const age = Math.min(59, Math.max(18, parseInt(ageInput.value, 10) || 30));
-        const r = Math.max(0, parseFloat(rateInput.value) || 0) / 100;
-        const annuityPct = Math.min(100, Math.max(40, parseFloat(annuityPctInput.value) || 40)) / 100;
-        const annuityRate = Math.max(0, parseFloat(annuityRateInput.value) || 6.0) / 100;
+      function calculateNPS() {
+        const m = Math.max(500, parseFloat(document.getElementById('nps-monthly').value) || 0);
+        const age = Math.min(59, Math.max(18, parseInt(document.getElementById('nps-current-age').value, 10) || 30));
+        const r = Math.max(1, parseFloat(document.getElementById('nps-rate').value) || 0) / 100;
+        const annuityPct = Math.min(100, Math.max(40, parseFloat(document.getElementById('nps-annuity-pct').value) || 40)) / 100;
+        const annuityRate = Math.max(1, parseFloat(document.getElementById('nps-annuity-rate').value) || 6.0) / 100;
 
         const years = 60 - age;
         const totalMonths = years * 12;
@@ -247,12 +520,12 @@
 
         let corpus = 0;
         if (monthlyRate === 0) {
-          corpus = P * totalMonths;
+          corpus = m * totalMonths;
         } else {
-          corpus = P * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
+          corpus = m * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
         }
 
-        const totalInvested = P * totalMonths;
+        const totalInvested = m * totalMonths;
         const totalGain = Math.max(0, corpus - totalInvested);
         const annuityCorpus = corpus * annuityPct;
         const lumpSum = corpus * (1 - annuityPct);
@@ -264,13 +537,50 @@
         document.getElementById('result-nps-lump').textContent = '₹' + Math.round(lumpSum).toLocaleString('en-IN');
         document.getElementById('result-nps-annuity-corpus').textContent = '₹' + Math.round(annuityCorpus).toLocaleString('en-IN');
         document.getElementById('result-nps-pension').textContent = '₹' + Math.round(monthlyPension).toLocaleString('en-IN') + ' / mo';
+
+        // Update SVG Donut (Lump Sum vs Annuity)
+        const donut = document.getElementById('nps-donut-segment');
+        if (donut) {
+          const lumpRatio = corpus > 0 ? (lumpSum / corpus) : 0.6;
+          const offset = 100 - (lumpRatio * 100);
+          donut.style.strokeDasharray = '100';
+          donut.style.strokeDashoffset = offset;
+        }
+
+        // Generate Schedule Table
+        const tbody = document.getElementById('nps-schedule-tbody');
+        if (tbody) {
+          tbody.innerHTML = '';
+          let curCorpus = 0;
+          let curInvested = 0;
+          for (let y = 1; y <= years; y++) {
+            const months = y * 12;
+            curInvested = m * months;
+            if (monthlyRate === 0) {
+              curCorpus = curInvested;
+            } else {
+              curCorpus = m * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+            }
+            const gain = Math.max(0, curCorpus - curInvested);
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td style="font-weight:700;">Age ${age + y} (Yr ${y})</td>
+              <td>₹${Math.round(curInvested).toLocaleString('en-IN')}</td>
+              <td style="color:var(--emerald); font-weight:600;">₹${Math.round(gain).toLocaleString('en-IN')}</td>
+              <td style="font-weight:800; color:var(--text-primary);">₹${Math.round(curCorpus).toLocaleString('en-IN')}</td>
+            `;
+            tbody.appendChild(tr);
+          }
+        }
       }
 
-      btn.addEventListener('click', calculate);
-      [mInput, ageInput, rateInput, annuityPctInput, annuityRateInput].forEach(el => {
-        el.addEventListener('input', calculate);
-        el.addEventListener('change', calculate);
-      });
+      syncPair('nps-monthly', 'nps-monthly-range', calculateNPS);
+      syncPair('nps-current-age', 'nps-current-age-range', calculateNPS);
+      syncPair('nps-rate', 'nps-rate-range', calculateNPS);
+      syncPair('nps-annuity-pct', 'nps-annuity-pct-range', calculateNPS);
+      syncPair('nps-annuity-rate', 'nps-annuity-rate-range', calculateNPS);
+
+      calculateNPS();
     })();
   </script>
 </body>
